@@ -1,0 +1,32 @@
+<html lang="en" data-ng-app="app">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>My AngularJS App</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/app.css">
+</head>
+<body>
+  <div data-ng-include="'layout/shell.html'"></div>
+
+  <!-- In production use:
+  <script src="//ajax.googleapis.com/ajax/libs/angularjs/x.x.x/angular.min.js"></script>
+  -->
+  <script src="bower_components/jquery/dist/jquery.min.js" type="text/javascript"></script>
+  <script src="bower_components/angular/angular.min.js" type="text/javascript"></script>
+  <script src="bower_components/angular-route/angular-route.min.js" type="text/javascript"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap.min.js" type="text/javascript"></script>
+  <script src="assets/js/ngplus-overlay.js" type="text/javascript"></script>
+  <script src="app.js" type="text/javascript"></script>
+  <script src="core/core.module.js" type="text/javascript"></script>
+  <script src="layout/layout.module.js" type="text/javascript"></script>
+  <script src="layout/shell.js" type="text/javascript"></script>
+  <script src="mainMenu/mainMenu.module.js" type="text/javascript"></script>
+  <script src="mainMenu/mainMenu.js" type="text/javascript"></script>
+  <script src="components/version/version.js" type="text/javascript"></script>
+  <script src="components/version/version-directive.js" type="text/javascript"></script>
+  <script src="components/version/interpolate-filter.js" type="text/javascript"></script>
+</body>
+</html>
