@@ -1,12 +1,12 @@
-
-
 (function () {
     'use strict';
   // Declare app level module which depends on views, and components
   angular.module('app', [
       'app.core',
       'app.layout',
-      'app.mainMenu'
+      'app.mainMenu',
+      'app.manageQuestions',
+      'app.game'
   ]).config(['$routeProvider', function($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/'});
   }])
