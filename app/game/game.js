@@ -9,9 +9,9 @@
         .controller('Game', Game);
 
 
-    Game.$inject = ['$location'];
+    Game.$inject = ['$location', 'Player', 'Game', 'Question', 'Category', 'BoardSpace'];
 
-    function Game($location){
-        var vm = this;
+    function Game($location, Player, Game, Question, Category, BoardSpace){
+      var vm = this;
     }
 })();
