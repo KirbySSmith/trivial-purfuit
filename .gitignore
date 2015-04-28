@@ -9,3 +9,4 @@ tmp
 target/
 wrapper/
 *.swp
+*.swo
