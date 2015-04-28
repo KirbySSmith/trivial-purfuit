@@ -1,0 +1,37 @@
+[
+  {"id":1,
+    "yBoardPossition":0,
+    "xBoardPossition":0,
+    "spokeSpace":0,
+    "centerSpace":0,
+    "rollAgain":0
+  },
+  {"id":2,
+    "yBoardPossition":0,
+    "xBoardPossition":1,
+    "spokeSpace":0,
+    "centerSpace":0,
+    "rollAgain":0
+  },
+  {"id":3,
+    "yBoardPossition":0,
+    "xBoardPossition":2,
+    "spokeSpace":0,
+    "centerSpace":0,
+    "rollAgain":0
+  },
+  {"id":4,
+    "yBoardPossition":0,
+    "xBoardPossition":3,
+    "spokeSpace":0,
+    "centerSpace":0,
+    "rollAgain":0
+  },
+  {"id":5,
+    "yBoardPossition":0,
+    "xBoardPossition":4,
+    "spokeSpace":0,
+    "centerSpace":0,
+    "rollAgain":0
+  }
+]

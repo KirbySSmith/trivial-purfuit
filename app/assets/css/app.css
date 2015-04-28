@@ -226,3 +226,10 @@
     transform: rotate(359deg);
   }
 }
+
+
+.gameSpace{
+  border: solid blue 1px;
+  height: 10%;
+  width: 10%;
+}

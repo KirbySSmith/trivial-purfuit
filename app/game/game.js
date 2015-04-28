@@ -9,9 +9,10 @@
         .controller('Game', Game);
 
 
-    Game.$inject = ['$location'];
+    Game.$inject = ['$location', 'BoardSpace'];
 
-    function Game($location){
+    function Game($location, BoardSpace){
         var vm = this;
+        vm.boardSpaces = BoardSpace.query();
     }
 })();

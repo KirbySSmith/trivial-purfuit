@@ -13,9 +13,7 @@
         $routeProvider.when('/game', {
             templateUrl: 'game/game.html',
             controller: 'Game'
-        }).otherwise({
-            templateUrl: 'game/game.html'
-        });
+        })
     }
 
 })();

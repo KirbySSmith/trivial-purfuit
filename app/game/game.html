@@ -1,3 +1,8 @@
 <h1>
   The Main Game Boardspace
 </h1>
+<div id="game-view" data-ng-controller="Game as vm">
+  <div ng-repeat="boardSpaceInstance in vm.boardSpaces" >
+    <div class="gameSpace">{{boardSpaceInstance.id}}Test</div>
+  </div>
+</div>
