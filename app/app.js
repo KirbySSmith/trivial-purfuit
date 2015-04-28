@@ -13,5 +13,5 @@
     //Work around for nav page load
       .run(['$route', function($route)  {
         $route.reload();
-      }]);
+      }])
 })();
