@@ -16,5 +16,7 @@
         vm.boardSpaces = BoardSpace.query();
         console.log(vm.boardSpaces);
         var boardSpaces = vm.boardSpaces;
+
+
     }
 })();
