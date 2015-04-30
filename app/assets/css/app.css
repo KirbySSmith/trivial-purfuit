@@ -228,6 +228,7 @@
 }
 
 #gameBoard{
+  float: left;
   width: 65%;
   padding-top: 65%;
   position: relative;
@@ -242,6 +243,15 @@
   height: 14.295%;
   width: 14.295%;
   position: absolute;
+}
+
+.right-column {
+  float:right;
+}
+
+#diceall {
+  /*quick and dirty to get dice off the top - right column needs to be implemented*/
+  margin-top:200px;
 }
 
 .border-top{
