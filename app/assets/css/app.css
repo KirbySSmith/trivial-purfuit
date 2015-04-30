@@ -227,9 +227,27 @@
   }
 }
 
-
-.gameSpace{
-  border: solid blue 1px;
-  height: 10%;
-  width: 10%;
+#gameBoard{
+  width: 65%;
+  padding-top: 65%;
+  position: relative;
+  box-shadow:  10px 10px 5px #888888;
+  margin: 5%;
+  background: #cccccc url(../images/flags-usa.jpg)  center center no-repeat;
+  background-size: cover;
 }
+.gameSpace{
+  background: ghostwhite;
+  border: solid #3232ff 2px;
+  height: 14.295%;
+  width: 14.295%;
+  position: absolute;
+}
+
+.border-top{
+  border-top: solid #6f6fff 1px;;
+}
+.border-left{
+  border-left: solid #6f6fff 1px;;
+}
+

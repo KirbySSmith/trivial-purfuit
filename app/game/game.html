@@ -2,7 +2,9 @@
   The Main Game Boardspace
 </h1>
 <div id="game-view" data-ng-controller="Game as vm">
-  <div ng-repeat="boardSpaceInstance in vm.boardSpaces" >
-    <div class="gameSpace">{{boardSpaceInstance.id}}Test</div>
+  <div id="gameBoard">
+    <div ng-repeat="boardSpaceInstance in vm.boardSpaces" class="gameSpace" ng-class="{ 'border-left': !boardSpaceInstance.borderLeft, 'border-top': !boardSpaceInstance.borderTop}"
+         style="top: {{boardSpaceInstance.top}}%; left: {{boardSpaceInstance.left}}%;">      {{boardSpaceInstance.id}}
+    </div>
   </div>
 </div>

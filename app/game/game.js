@@ -12,6 +12,9 @@
     Game.$inject = ['$location', 'Player', 'Game', 'Question', 'Category', 'BoardSpace'];
 
     function Game($location, Player, Game, Question, Category, BoardSpace){
-      var vm = this;
+        var vm = this;
+        vm.boardSpaces = BoardSpace.query();
+        console.log(vm.boardSpaces);
+        var boardSpaces = vm.boardSpaces;
     }
 })();
