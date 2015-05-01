@@ -1,7 +1,4 @@
 
-/**
- * Created by ksmit207 on 1/2/2015.
- */
 (function () {
     'use strict';
 
@@ -9,19 +6,37 @@
         .controller('Game', Game);
 
 
-    Game.$inject = ['$location', 'Player', 'Game', 'Question', 'Category', 'BoardSpace'];
+    Game.$inject = ['$location', 'Player', 'Question', 'Category', 'BoardSpace'];
 
-    function Game($location, Player, Game, Question, Category, BoardSpace){
+    function Game($location, Player, Question, Category, BoardSpace){
+        var vm = this;
+
+        vm.boardSpaces = [];
+        vm.players = [];
+        vm.players.push(new Player(" Kirby"));
+
         D6.baseUrl = "assets/images/diceRoll/";
         D6.dice(2, function(result){
-            //callback as example
+            vm.players[0].updateLocation(result, promptForDirection);
             console.log(result)
         });
-        var vm = this;
-        vm.boardSpaces = BoardSpace.query();
-        console.log(vm.boardSpaces);
-        var boardSpaces = vm.boardSpaces;
+        activate();
 
+        function activate() {
+            return BoardSpace.query().then(function(boardSpaces) {
+                vm.boardSpaces = boardSpaces;
+                vm.players.forEach(function(player){
+                    player.boardLocation  = vm.boardSpaces[26];
+                });
+            });
+        }
+
+
+        var promptForDirection = function(directionList) {
+            //Todo: a decision is need from user on which direction to travel
+            return directionList[0];
+        }
 
     }
+
 })();

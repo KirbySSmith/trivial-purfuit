@@ -7,8 +7,8 @@
          id="boardSpace{{boardSpaceInstance.id}}" style="top: {{boardSpaceInstance.top}}%; left: {{boardSpaceInstance.left}}%;">
       {{boardSpaceInstance.id}}
     </div>
+    <purfuit-game-piece ng-repeat="player in vm.players" player="player" />
   </div>
-
   <div class="right-column col-sm-3">
     <div id="diceall">
 
