@@ -4,10 +4,11 @@
 <div id="game-view" data-ng-controller="Game as vm">
   <div id="gameBoard">
     <div ng-repeat="boardSpaceInstance in vm.boardSpaces" class="gameSpace" ng-class="{ 'border-left': !boardSpaceInstance.borderLeft, 'border-top': !boardSpaceInstance.borderTop}"
-         style="top: {{boardSpaceInstance.top}}%; left: {{boardSpaceInstance.left}}%;">      {{boardSpaceInstance.id}}
+         id="boardSpace{{boardSpaceInstance.id}}" style="top: {{boardSpaceInstance.top}}%; left: {{boardSpaceInstance.left}}%;">
+      {{boardSpaceInstance.id}}
     </div>
+    <purfuit-game-piece ng-repeat="player in vm.players" player="player" />
   </div>
-
   <div class="right-column col-sm-3">
     <div id="diceall">
 

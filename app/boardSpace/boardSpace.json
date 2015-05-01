@@ -179,7 +179,7 @@
     "borderLeft":1,
     "borderTop":0
   },
-  {"id":22,
+  {"id":21,
     "yBoardPosition":4,
     "xBoardPosition":0,
     "spokeSpace":0,
@@ -188,7 +188,7 @@
     "borderLeft":1,
     "borderTop":0
   },
-  {"id":23,
+  {"id":22,
     "yBoardPosition":3,
     "xBoardPosition":0,
     "spokeSpace":0,
@@ -197,8 +197,17 @@
     "borderLeft":1,
     "borderTop":0
   },
-  {"id":24,
+  {"id":23,
     "yBoardPosition":2,
+    "xBoardPosition":0,
+    "spokeSpace":0,
+    "centerSpace":0,
+    "rollAgain":0,
+    "borderLeft":1,
+    "borderTop":0
+  },
+  {"id":24,
+    "yBoardPosition":1,
     "xBoardPosition":0,
     "spokeSpace":0,
     "centerSpace":0,
@@ -208,15 +217,6 @@
   },
   {"id":25,
     "yBoardPosition":1,
-    "xBoardPosition":0,
-    "spokeSpace":0,
-    "centerSpace":0,
-    "rollAgain":0,
-    "borderLeft":1,
-    "borderTop":0
-  },
-  {"id":26,
-    "yBoardPosition":1,
     "xBoardPosition":3,
     "spokeSpace":1,
     "centerSpace":0,
@@ -224,7 +224,7 @@
     "borderLeft":1,
     "borderTop":0
   },
-  {"id":27,
+  {"id":26,
     "yBoardPosition":2,
     "xBoardPosition":3,
     "spokeSpace":1,
@@ -233,7 +233,7 @@
     "borderLeft":1,
     "borderTop":0
   },
-  {"id":28,
+  {"id":27,
     "yBoardPosition":3,
     "xBoardPosition":3,
     "spokeSpace":1,
@@ -242,7 +242,7 @@
     "borderLeft":0,
     "borderTop":0
   },
-  {"id":29,
+  {"id":28,
     "yBoardPosition":4,
     "xBoardPosition":3,
     "spokeSpace":1,
@@ -251,7 +251,7 @@
     "borderLeft":1,
     "borderTop":0
   },
-  {"id":30,
+  {"id":29,
     "yBoardPosition":5,
     "xBoardPosition":3,
     "spokeSpace":1,
@@ -260,7 +260,7 @@
     "borderLeft":1,
     "borderTop":0
   },
-  {"id":31,
+  {"id":30,
     "yBoardPosition":3,
     "xBoardPosition":1,
     "spokeSpace":1,
@@ -269,7 +269,7 @@
     "borderLeft":0,
     "borderTop":1
   },
-  {"id":32,
+  {"id":31,
     "yBoardPosition":3,
     "xBoardPosition":2,
     "spokeSpace":1,
@@ -278,7 +278,7 @@
     "borderLeft":0,
     "borderTop":1
   },
-  {"id":33,
+  {"id":32,
     "yBoardPosition":3,
     "xBoardPosition":4,
     "spokeSpace":1,
@@ -287,7 +287,7 @@
     "borderLeft":0,
     "borderTop":1
   },
-  {"id":34,
+  {"id":33,
     "yBoardPosition":3,
     "xBoardPosition":5,
     "spokeSpace":1,

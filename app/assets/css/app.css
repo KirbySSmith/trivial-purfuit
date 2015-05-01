@@ -260,4 +260,11 @@
 .border-left{
   border-left: solid #6f6fff 1px;;
 }
+.gamePiece{
+  -webkit-transition: 0.5s ease-in-out;
+  -moz-transition: 0.5s ease-in-out;
+  -o-transition: 0.5s ease-in-out;
+  transition: 0.5s ease-in-out;
+}
+
 
