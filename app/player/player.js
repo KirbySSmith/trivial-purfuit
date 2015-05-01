@@ -11,6 +11,7 @@
       this.id = id;
       this.name = name;
       this.boardLocation = {};
+
     }
 
 

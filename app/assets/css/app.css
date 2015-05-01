@@ -263,6 +263,7 @@
 
 /*Game Piece Style*/
 .gamePiece{
+  position: absolute;
   -webkit-transition: 0.5s ease-in-out;
   -moz-transition: 0.5s ease-in-out;
   -o-transition: 0.5s ease-in-out;
