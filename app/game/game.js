@@ -13,11 +13,20 @@
 
         vm.boardSpaces = [];
         vm.players = [];
-        vm.players.push(new Player(" Kirby"));
+        vm.players.push(new Player(1, "Kirby"));
+        vm.players.push(new Player(2, "Tommy"));
+        vm.players.push(new Player(3, "Frances"));
+        vm.players.push(new Player(4, "Sam"));
+        vm.currentPlayerIndex = 0;
 
         D6.baseUrl = "assets/images/diceRoll/";
         D6.dice(2, function(result){
-            vm.players[0].updateLocation(result, promptForDirection);
+            vm.players[vm.currentPlayerIndex].updateLocation(result, promptForDirection);
+            if(vm.currentPlayerIndex < vm.players.length){
+                vm.currentPlayerIndex = vm.currentPlayerIndex + 1 < vm.players.length ? vm.currentPlayerIndex + 1 : 0 ;
+            }else{
+
+            }
             console.log(result)
         });
         activate();

@@ -260,12 +260,64 @@
 .border-left{
   border-left: solid #6f6fff 1px;;
 }
+
+/*Game Piece Style*/
 .gamePiece{
   -webkit-transition: 0.5s ease-in-out;
   -moz-transition: 0.5s ease-in-out;
   -o-transition: 0.5s ease-in-out;
   transition: 0.5s ease-in-out;
+  height: 14.295%;
+  width: 14.295%;
 }
+.gameToken{
+  height: 46.2%;
+  width: 46.2%;
+  border-width:4px;
+  border-style:solid;
+  box-shadow:  1px 1px 1px #a1a1a1;
+}
+
+#player1.gameToken{
+  margin-top: 2.5%;
+  margin-left: 2.5%;
+  border-color: #008000;
+  background-color: #99cc99;
+
+}
+#player2.gameToken{
+  margin-top: 2.5%;
+  margin-left: 50.5%;
+  border-color: #0000ff;
+  background-color: #9999ff;
+}
+#player3.gameToken{
+  margin-top: 50.5%;
+  margin-left: 2.5%;
+  border-color: #FFA500;
+  background-color: #ffdb99;
+}
+#player4.gameToken{
+  margin-top: 50.5%;
+  margin-left: 50.5%;
+  border-color: #FF0000;
+  background-color: #ff9999;
+}
+.gamePieceCategory{
+  border: solid #000000 2px;
+  width: 50%;
+}
+
+@media screen and (max-width: 768px)  {
+  .gameToken{
+    border-width:2px;
+  }
+  .gamePieceCategory{
+    border:none;
+  }
+
+}
+
 
 /* Homepage styling */
 .welcome {

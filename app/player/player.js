@@ -7,7 +7,8 @@
     /*
      * Player Class
      */
-    function Player(name){
+    function Player(id, name){
+      this.id = id;
       this.name = name;
       this.boardLocation = {};
     }
