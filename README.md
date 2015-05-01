@@ -1,5 +1,7 @@
 # Team No Comment
 
+Project hosted at http://trivial-purfuit.s3-website-us-east-1.amazonaws.com/#/ 
+
 This project is based on 2 different projects. 
 
 * angular-seed: https://github.com/angular/angular-seed 
