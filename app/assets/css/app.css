@@ -267,4 +267,21 @@
   transition: 0.5s ease-in-out;
 }
 
+/* Homepage styling */
+.welcome {
+  text-align: center;
+  font-size: 200%;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  -webkit-text-shadow: 2px 2px #000000;
+  text-shadow: 2px 2px #000000;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #F58A00;
+  padding: 0;
+}
 
+.options {
+  text-align: center;
+}
