@@ -1,17 +1,50 @@
-<h1>
-  The Main Game Boardspace
-</h1>
 <div id="game-view" data-ng-controller="Game as vm">
-  <div id="gameBoard">
-    <div ng-repeat="boardSpaceInstance in vm.boardSpaces" class="gameSpace" ng-class="{ 'border-left': !boardSpaceInstance.borderLeft, 'border-top': !boardSpaceInstance.borderTop}"
-         id="boardSpace{{boardSpaceInstance.id}}" ng-style="{top: boardSpaceInstance.top+'%', left: boardSpaceInstance.left+'%'}">
-      {{boardSpaceInstance.id}}
+  <div id="gameBoardWrapper" class="col-sm-9 col-xs-12">
+    <div id="gameBoard">
+      <div ng-repeat="boardSpaceInstance in vm.boardSpaces" class="gameSpace" ng-class="{ 'border-left': !boardSpaceInstance.borderLeft, 'border-top': !boardSpaceInstance.borderTop}"
+           id="boardSpace{{boardSpaceInstance.id}}" ng-style="{top: boardSpaceInstance.top+'%', left: boardSpaceInstance.left+'%'}">
+        {{boardSpaceInstance.id}}
+      </div>
+      <purfuit-game-piece ng-repeat="player in vm.players" player="player" ></purfuit-game-piece>
     </div>
-    <purfuit-game-piece ng-repeat="player in vm.players" player="player" ></purfuit-game-piece>
+    <div class="clearfix "></div>
   </div>
-  <div class="right-column col-sm-3">
-    <div id="diceall">
+  <div class="col-sm-3 col-xs-12">
 
+    <div id="currentPlayerInfo" class="col-xs-12" ng-style="{'background-color': vm.players[vm.currentPlayerIndex].bgColor}">
+      {{vm.players[vm.currentPlayerIndex].name}}
+    </div>
+    <div id="diceall" class="col-sm-12 col-xs-4 ">
+    </div>
+    <div id="gamePieceControls" class="col-sm-12 col-xs-8 ">
+      <div class="col-xs-12">
+        <button type="button" class="btn btn-default" aria-label="Move Up">
+          <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="col-xs-4">
+        <button type="button" class="btn btn-default" aria-label="Move Left">
+          <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="col-xs-4">
+        moves
+
+        <div class="clearfix "></div>
+        <span id="moveCountDisplay">
+         {{vm.players[vm.currentPlayerIndex].numberOfMoves}}
+        </span>
+      </div>
+      <div class="col-xs-4">
+        <button type="button" class="btn btn-default" aria-label="Move Right">
+          <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+        </button>
+      </div>
+      <div class="col-xs-12">
+        <button type="button" class="btn btn-default" aria-label="Move Down">
+          <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+        </button>
+      </div>
     </div>
   </div>
 </div>
