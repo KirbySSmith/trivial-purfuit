@@ -18,8 +18,9 @@
       this.categoryTwoCollected = false;
       this.categoryThreeCollected = false;
       this.categoryFourCollected = false;
+      this.previousSpace = null;
+      this.adjacentSpaceList = [];
     }
-
 
     /*
      * Update location
@@ -27,27 +28,83 @@
      *  numberOfMoves - number of spaces to move
      *  requestDirection - request direction from user call back
      */
-    Player.prototype.updateLocation = function(numberOfMoves, promptForDirection, nextTurn, previousSpace ){
-      this.numberOfMoves = numberOfMoves;
+    Player.prototype.move = function(promptForDirection, nextTurn){
       var that = this;
-      return BoardSpace.findAdjacentSpaces(this.boardLocation).then(function(adjacentList)
+      return BoardSpace.findAdjacentSpaces(this.boardLocation).then(function(adjacentSpaceList)
       {
-        var availableDirections = BoardSpace.availableDirections(that.boardLocation, previousSpace, adjacentList);
+        that.adjacentSpaceList = adjacentSpaceList;
+        var availableDirections = that.availableDirections();
         var directionToMove;
         if(availableDirections.length > 1){
-          directionToMove = promptForDirection(availableDirections);
+          promptForDirection(availableDirections);
         }else{
-          directionToMove = availableDirections[0];
-        }
-        previousSpace = that.boardLocation;
-        that.boardLocation = BoardSpace.findNextSpace(that.boardLocation, adjacentList, directionToMove);
-        numberOfMoves--;
-        if(numberOfMoves > 0) {
-          $timeout(function(){that.updateLocation(numberOfMoves, promptForDirection, nextTurn, previousSpace)}, 500);
-        }else{
-          $timeout(function(){that.numberOfMoves = 0; nextTurn()}, 500);
+          that.movePiece(promptForDirection, nextTurn, availableDirections[0]);
         }
       });
+    };
+
+    Player.prototype.movePiece = function(promptForDirection, nextTurn, directionToMove){
+      var that = this;
+      this.previousSpace = that.boardLocation;
+      this.boardLocation = that.findNextSpace(directionToMove);
+      this.numberOfMoves--;
+      if(this.numberOfMoves > 0) {
+        $timeout(function(){that.move(promptForDirection, nextTurn)}, 500);
+      }else{
+        $timeout(function(){
+          that.numberOfMoves = 0;
+          that.previousSpace = null;
+          nextTurn()}, 500);
+      }
+    };
+
+    //Static
+    Player.prototype.availableDirections = function (){
+      var availableDirections = [];
+      var that = this;
+      angular.forEach(this.adjacentSpaceList, function(value, key){
+        if(!that.previousSpace || value.id != that.previousSpace.id){
+          if(that.boardLocation.yBoardPosition != value.yBoardPosition){
+            if(that.boardLocation.yBoardPosition > value.yBoardPosition){
+              availableDirections.push(Enum.direction.up)
+            }else{
+              availableDirections.push(Enum.direction.down)
+            }
+          }else{
+            if(that.boardLocation.xBoardPosition > value.xBoardPosition){
+              availableDirections.push(Enum.direction.left)
+            }else{
+              availableDirections.push(Enum.direction.right)
+            }
+          }
+        }
+      }, availableDirections);
+      return availableDirections;
+    };
+
+
+    Player.prototype.findNextSpace = function (direction){
+      var nextSpaceY = this.boardLocation.yBoardPosition;
+      var nextSpaceX = this.boardLocation.xBoardPosition;
+      var nextSpace;
+      switch (direction){
+        case Enum.direction.up:
+          nextSpaceY = this.boardLocation.yBoardPosition - 1;
+          break;
+        case Enum.direction.right:
+          nextSpaceX = this.boardLocation.xBoardPosition + 1;
+          break;
+        case Enum.direction.down:
+          nextSpaceY = this.boardLocation.yBoardPosition + 1;
+          break;
+        case Enum.direction.left:
+          nextSpaceX = this.boardLocation.xBoardPosition - 1;
+          break;
+      }
+      angular.forEach(this.adjacentSpaceList, function(value, key){
+        if(nextSpaceY == value.yBoardPosition && nextSpaceX == value.xBoardPosition) nextSpace = value;
+      },nextSpace);
+      return nextSpace;
     };
 
     Player.prototype.collectCategory = function(categoryId){

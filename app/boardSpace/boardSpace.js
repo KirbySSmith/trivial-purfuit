@@ -85,51 +85,7 @@
             });
 
         };
-        //Static
-        BoardSpace.availableDirections = function (currentSpace, previousSpace, adjacentSpaces){
-            var availableDirections = [];
-            angular.forEach(adjacentSpaces, function(value, key){
-                if(!previousSpace || value.id != previousSpace.id){
-                    if(currentSpace.yBoardPosition != value.yBoardPosition){
-                        if(currentSpace.yBoardPosition > value.yBoardPosition){
-                            availableDirections.push(Enum.direction.up)
-                        }else{
-                            availableDirections.push(Enum.direction.down)
-                        }
-                    }else{
-                        if(currentSpace.xBoardPosition > value.xBoardPosition){
-                            availableDirections.push(Enum.direction.left)
-                        }else{
-                            availableDirections.push(Enum.direction.right)
-                        }
-                    }
-                }
-            }, availableDirections);
-            return availableDirections;
-        };
-        BoardSpace.findNextSpace = function (currentSpace, adjacentSpaces, direction){
-            var nextSpaceY = currentSpace.yBoardPosition;
-            var nextSpaceX = currentSpace.xBoardPosition;
-            var nextSpace;
-            switch (direction){
-                case Enum.direction.up:
-                    nextSpaceY = currentSpace.yBoardPosition - 1;
-                    break;
-                case Enum.direction.right:
-                    nextSpaceX = currentSpace.xBoardPosition + 1;
-                    break;
-                case Enum.direction.down:
-                    nextSpaceY = currentSpace.yBoardPosition + 1;
-                    break;
-                case Enum.direction.left:
-                    nextSpaceX = currentSpace.xBoardPosition - 1;
-                    break;
-            }
-            angular.forEach(adjacentSpaces, function(value, key){
-                if(nextSpaceY == value.yBoardPosition && nextSpaceX == value.xBoardPosition) nextSpace = value;
-            },nextSpace);
-            return nextSpace;
-        };
+
 
         // Finally, the factory itself returns the entire
         // Project constructor (which has `query` and `get` attached).

@@ -322,10 +322,31 @@
   font-size: 2em;
 }
 
-#gamePieceControls{
-  text-align: center;
-  vertical-align: 50%;
+#gamePieceControls table{
+  margin: auto;
 }
+#gamePieceControls td{
+  text-align: center;
+  padding: 2px;
+}
+#gamePieceControls button{
+  box-shadow:  0 0 9px 1px #00c6ff;
+}
+#gamePieceControls button:disabled{
+  box-shadow: none;
+}
+#diceall{
+  text-align: center;
+  padding: 0;
+  padding-top:15px;
+}
+#diceall input{
+  box-shadow:  0 0 9px 1px #00c6ff;
+}
+#diceall input:disabled{
+  box-shadow: none;
+}
+
 @media screen and (max-width: 768px)  {
   .gameToken{
 	border-width:2px;
