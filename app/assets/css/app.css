@@ -193,47 +193,49 @@
 
 @-webkit-keyframes rotation {
   from {
-    -webkit-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
   }
   to {
-    -webkit-transform: rotate(359deg);
+	-webkit-transform: rotate(359deg);
   }
 }
 
 @-moz-keyframes rotation {
   from {
-    -moz-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
   }
   to {
-    -moz-transform: rotate(359deg);
+	-moz-transform: rotate(359deg);
   }
 }
 
 @-o-keyframes rotation {
   from {
-    -o-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
   }
   to {
-    -o-transform: rotate(359deg);
+	-o-transform: rotate(359deg);
   }
 }
 
 @keyframes rotation {
   from {
-    transform: rotate(0deg);
+	transform: rotate(0deg);
   }
   to {
-    transform: rotate(359deg);
+	transform: rotate(359deg);
   }
 }
-
+#gameBoardWrapper{
+  padding: 5%;
+}
 #gameBoard{
   float: left;
-  width: 65%;
-  padding-top: 65%;
+  width: 100%;
+  padding-top: 100%;
   position: relative;
   box-shadow:  10px 10px 5px #888888;
-  margin: 5%;
+
   background: #cccccc url(../images/flags-usa.jpg)  center center no-repeat;
   background-size: cover;
 }
@@ -245,26 +247,109 @@
   position: absolute;
 }
 
-.right-column {
-  float:right;
-}
-
-#diceall {
-  /*quick and dirty to get dice off the top - right column needs to be implemented*/
-  margin-top:200px;
-}
 
 .border-top{
-  border-top: solid #6f6fff 1px;;
+    border-top: solid #6f6fff 1px;;
 }
 .border-left{
-  border-left: solid #6f6fff 1px;;
+    border-left: solid #6f6fff 1px;;
 }
+
+/*Game Piece Style*/
 .gamePiece{
-  -webkit-transition: 0.5s ease-in-out;
-  -moz-transition: 0.5s ease-in-out;
-  -o-transition: 0.5s ease-in-out;
-  transition: 0.5s ease-in-out;
+    position: absolute;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    height: 14.295%;
+    width: 14.295%;
+
+}
+.currentPlayer.gameToken{
+  z-index: 120;
+  box-shadow:  0 0 9px 1px #00c6ff;
+}
+.gameToken{
+  height: 45.5%;
+  width: 45.5%;
+  border-width:4px;
+  border-style:solid;
+  box-shadow:  1px 1px 1px #a1a1a1;
+  z-index: 119;
+}
+
+#player1.gameToken{
+  margin-top: 3%;
+  margin-left: 3%;
+  background-color: #99cc99;
+}
+#player1.gameToken, #player1.gameToken td{
+	border-color: #008000;
+}
+#player2.gameToken{
+  margin-top: 3%;
+  margin-left: 50.5%;
+  background-color: #cc99cc;
+}
+#player2.gameToken, #player2.gameToken td{
+	border-color: #800080;
+}
+#player3.gameToken{
+  margin-top: 50.5%;
+  margin-left: 3%;
+  background-color: #ffdb99;
+}
+#player3.gameToken, #player3.gameToken td{
+	border-color: #FFA500;
+}
+#player4.gameToken{
+  margin-top: 50.5%;
+  margin-left: 50.5%;
+  background-color: #ffff7f;
+}
+#player4.gameToken, #player4.gameToken td{
+	border-color: #cccc00;
+}
+.gamePieceCategory{
+  border: solid #000000 2px;
+  width: 50%;
+}
+
+#currentPlayerInfo{
+  padding-top: 50%;
+  height: 50%;
+  font-size: 2em;
+}
+
+#gamePieceControls{
+  text-align: center;
+  vertical-align: 50%;
+}
+@media screen and (max-width: 768px)  {
+  .gameToken{
+	border-width:2px;
+  }
+  .gamePieceCategory{
+	border:none;
+  }
+  #currentPlayerInfo{
+    padding-top: 0;
+    height: 1.4em;
+  }
+}
+
+.categoryOne{
+  background-color: #ff0000;
+}
+.categoryTwo{
+  background-color: #ffffff;
+}
+.categoryThree{
+  background-color: #0000ff;
+}
+.categoryFour{
+  background-color: #00ff00;
 }
 
 /* Homepage styling */

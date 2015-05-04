@@ -1,1 +1,16 @@
-<div class="gamePiece" style="position: absolute; top: {{player.boardLocation.top}}%; left: {{player.boardLocation.left}}%;">{{ player.name}}</div>
+<div class="gamePiece" ng-style="{top: player.boardLocation.top+'%', left: player.boardLocation.left +'%'}">
+    <table id="player{{player.id}}" ng-class="{'currentPlayer': player.currentPlayer}" class="gameToken">
+        <tr>
+            <td class="gamePieceCategory" ng-class="{'categoryOne': player.categoryOneCollected}">
+            </td>
+            <td class="gamePieceCategory" ng-class="{'categoryTwo': player.categoryTwoCollected}">
+            </td>
+        </tr>
+        <tr>
+            <td class="gamePieceCategory" ng-class="{'categoryThree': player.categoryThreeCollected}">
+            </td>
+            <td class="gamePieceCategory" ng-class="{'categoryFour': player.categoryFourCollected}">
+            </td>
+        </tr>
+    </table>
+</div>
