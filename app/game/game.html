@@ -17,34 +17,42 @@
     <div id="diceall" class="col-sm-12 col-xs-4 ">
     </div>
     <div id="gamePieceControls" class="col-sm-12 col-xs-8 ">
-      <div class="col-xs-12">
-        <button type="button" class="btn btn-default" aria-label="Move Up">
-          <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
-        </button>
-      </div>
-      <div class="col-xs-4">
-        <button type="button" class="btn btn-default" aria-label="Move Left">
-          <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
-        </button>
-      </div>
-      <div class="col-xs-4">
-        moves
+      <table>
+        <tr>
+          <td colspan="3">
+            <button ng-disabled="vm.disableDirectionUp" ng-click="vm.directionButtonClick(1)" type="button" class="btn btn-default" aria-label="Move Up">
+              <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button ng-disabled="vm.disableDirectionLeft" ng-click="vm.directionButtonClick(4)" type="button" class="btn btn-default" aria-label="Move Left">
+              <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td>
+            moves
+            <div class="clearfix "></div>
+            <span id="moveCountDisplay">
+             {{vm.players[vm.currentPlayerIndex].numberOfMoves}}
+            </span>
+          </td>
+          <td>
+            <button ng-disabled="vm.disableDirectionRight" ng-click="vm.directionButtonClick(2)" type="button" class="btn btn-default" aria-label="Move Right">
+              <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <button ng-disabled="vm.disableDirectionDown" ng-click="vm.directionButtonClick(3)" type="button" class="btn btn-default" aria-label="Move Down">
+              <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+            </button>
+          </td>
+        </tr>
+      </table>
 
-        <div class="clearfix "></div>
-        <span id="moveCountDisplay">
-         {{vm.players[vm.currentPlayerIndex].numberOfMoves}}
-        </span>
-      </div>
-      <div class="col-xs-4">
-        <button type="button" class="btn btn-default" aria-label="Move Right">
-          <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
-        </button>
-      </div>
-      <div class="col-xs-12">
-        <button type="button" class="btn btn-default" aria-label="Move Down">
-          <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
-        </button>
-      </div>
     </div>
   </div>
 </div>
