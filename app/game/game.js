@@ -64,6 +64,21 @@
             vm.players[vm.currentPlayerIndex].movePiece(promptForDirection, nextTurn, direction);
         };
 
+        vm.rightAnswerClick = function(){
+            vm.players[vm.currentPlayerIndex].showRollAgain();
+        };
+
+        vm.continueClick = function(){
+            $('#questionModal').modal('hide');
+            $('#rightAnswerBtn').show();
+            $('#wrongAnswerBtn').show();
+            $('.question-status').show();
+        };
+
+        vm.wrongAnswerClick = function(){
+           //wrong answer
+            nextTurn();
+        };
     }
 
 })();

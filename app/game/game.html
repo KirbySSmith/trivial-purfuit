@@ -1,4 +1,24 @@
 <div id="game-view" data-ng-controller="Game as vm">
+    <!-- Modal -->
+    <div class="modal fade" id="questionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 id="category-title" class="cat-places">Places</h4>
+                </div>
+                <div class="modal-body question">
+                </div>
+                <div class="modal-footer">
+                    <div class="question-status">
+                        How did you do?
+                    </div>
+                    <button id="continueBtn" type="button" class="btn btn-default" ng-click="vm.continueClick()">Continue</button>
+                    <button id="rightAnswerBtn" type="button" class="btn btn-default" ng-click="vm.rightAnswerClick()" >Right Answer</button>
+                    <button id="wrongAnswerBtn" type="button" class="btn btn-default" ng-click="vm.wrongAnswerClick()" data-dismiss="modal">Wrong Answer</button>
+                </div>
+            </div>
+        </div>
+    </div>
   <div id="gameBoardWrapper" class="col-sm-9 col-xs-12">
     <div id="gameBoard">
       <div ng-repeat="boardSpaceInstance in vm.boardSpaces" class="gameSpace" ng-class="{ 'border-left': !boardSpaceInstance.borderLeft, 'border-top': !boardSpaceInstance.borderTop}"
@@ -52,7 +72,6 @@
           </td>
         </tr>
       </table>
-
     </div>
   </div>
 </div>

@@ -241,7 +241,7 @@
 }
 .gameSpace{
   background: ghostwhite;
-  border: solid #3232ff 2px;
+  border: solid darkblue 2px;
   height: 14.295%;
   width: 14.295%;
   position: absolute;
@@ -391,3 +391,36 @@
 .options {
   text-align: center;
 }
+
+/* Start: Question Styling */
+.question-status {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.question {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
+#category-title {
+    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+    font-size: 40px;
+}
+
+.cat-places {
+    color: darkblue;
+}
+
+.cat-people {
+    color: darkred;
+}
+
+.cat-holiday {
+    color: darkgreen;
+}
+
+#continueBtn {
+    display: none;
+}
+/* End: Question Styling */

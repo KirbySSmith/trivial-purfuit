@@ -49,14 +49,42 @@
       this.boardLocation = that.findNextSpace(directionToMove);
       this.numberOfMoves--;
       if(this.numberOfMoves > 0) {
-        $timeout(function(){that.move(promptForDirection, nextTurn)}, 500);
+        $timeout(function(){that.move(promptForDirection)}, 500);
       }else{
         $timeout(function(){
           that.numberOfMoves = 0;
           that.previousSpace = null;
-          nextTurn()}, 500);
+            Player.prototype.showQuestion();
+        }, 500);
       }
     };
+
+      Player.prototype.showQuestion = function(){
+          var that = this;
+          //need to get question category, for now
+          var category = 'cat-holiday';
+          var categoryText = 'Places';
+          //need to get new question, for now
+          var newQuestion = 'The last man to sign the Declaration of Independence, Matthew Thornton, was from which colony?';
+          $('#category-title').className = '';
+          $('#category-title').text(categoryText);
+          $('#category-title').addClass(category);
+          $('.question').text(newQuestion);
+          $('#continueBtn').hide();
+          $('#questionModal').modal('show');
+      };
+
+      Player.prototype.showRollAgain = function(){
+          var that = this;
+          //need to get question category, for now
+          $('#category-title').className = '';
+          $('#category-title').text("Congratulations!");
+          $('.question').text("It's still your turn. Roll again");
+          $('#rightAnswerBtn').hide();
+          $('#wrongAnswerBtn').hide();
+          $('.question-status').hide();
+          $('#continueBtn').show();
+      };
 
     //Static
     Player.prototype.availableDirections = function (){
