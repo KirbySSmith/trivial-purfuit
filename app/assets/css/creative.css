@@ -60,6 +60,10 @@ p {
     background-color: #222;
 }
 
+.categoryTwo .text-faded, .categoryTwo .project-name {
+    color: #000000;
+}
+
 .text-faded {
     color: rgba(255,255,255,.7);
 }
@@ -178,7 +182,7 @@ header {
     min-height: auto;
     text-align: center;
     color: #fff;
-    background-image: url(../img/header.jpg);
+    background-image: url(../img/header2.jpg);
     background-position: center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -274,7 +278,6 @@ header .header-content .header-content-inner p {
     text-align: center;
     color: #fff;
     opacity: 0;
-    background: rgba(240,95,64,.9);
     -webkit-transition: all .35s;
     -moz-transition: all .35s;
     transition: all .35s;
