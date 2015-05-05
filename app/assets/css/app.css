@@ -405,12 +405,10 @@
 }
 
 .question {
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
     font-size: 20px;
 }
 
 #category-title {
-    font-family: "Segoe UI", Arial, Helvetica, sans-serif;
     font-size: 40px;
 }
 
@@ -426,7 +424,26 @@
     color: darkgreen;
 }
 
-#continueBtn {
+
+#questionModal.continue  #rightAnswerBtn,
+#questionModal.continue  .question-status,
+#questionModal.continue  #wrongAnswerBtn{
     display: none;
 }
-/* End: Question Styling */
+
+#questionModal.continue  #continueBtn{
+    display: inline-block;
+}
+
+
+#questionModal.rollAgain  #rightAnswerBtn,
+#questionModal.rollAgain  .question-status,
+#questionModal.rollAgain  #wrongAnswerBtn{
+    display: inline-block;
+}
+
+#questionModal.rollAgain  #continueBtn{
+    display: none;
+}
+
+/* End: Que stion Styling */

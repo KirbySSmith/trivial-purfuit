@@ -59,32 +59,27 @@
       }
     };
 
-      Player.prototype.showQuestion = function(){
-          var that = this;
-          //need to get question category, for now
-          var category = 'cat-holiday';
-          var categoryText = 'Places';
-          //need to get new question, for now
-          var newQuestion = 'The last man to sign the Declaration of Independence, Matthew Thornton, was from which colony?';
-          $('#category-title').className = '';
-          $('#category-title').text(categoryText);
-          $('#category-title').addClass(category);
-          $('.question').text(newQuestion);
-          $('#continueBtn').hide();
-          $('#questionModal').modal('show');
-      };
 
-      Player.prototype.showRollAgain = function(){
-          var that = this;
-          //need to get question category, for now
-          $('#category-title').className = '';
-          $('#category-title').text("Congratulations!");
-          $('.question').text("It's still your turn. Roll again");
-          $('#rightAnswerBtn').hide();
-          $('#wrongAnswerBtn').hide();
-          $('.question-status').hide();
-          $('#continueBtn').show();
-      };
+    Player.prototype.showQuestion = function(){
+        var that = this;
+        var catTitle = $('#category-title');
+        //need to get question category, for now:
+        var category = 'cat-holiday';
+        var categoryText = 'Places';
+        //need to get new question, for now:
+        var newQuestion = 'The last man to sign the Declaration of Independence, Matthew Thornton, was from which colony?';
+
+        catTitle.className = '';
+        catTitle.text(categoryText);
+        catTitle.addClass(category);
+        $('.question').text(newQuestion);
+
+        var modal =  $('#questionModal');
+
+        modal.addClass('rollAgain');
+        modal.removeClass('continue');
+        modal.modal('show');
+    };
 
     //Static
     Player.prototype.availableDirections = function (){
