@@ -11,8 +11,7 @@
 
     function RouteConfig($routeProvider) {
         $routeProvider.when('/game', {
-            templateUrl: 'game/game.html',
-            controller: 'Game'
+            templateUrl: 'game/game.html'
         })
     }
 
