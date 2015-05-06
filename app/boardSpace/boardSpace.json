@@ -6,7 +6,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":1,
-    "borderTop":1
+    "borderTop":1,
+    "categoryId":1,
+    "headquarters":true
   },
   {"id":2,
     "yBoardPosition":0,
@@ -15,7 +17,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":1
+    "borderTop":1,
+    "categoryId":2,
+    "headquarters":false
   },
   {"id":3,
     "yBoardPosition":0,
@@ -24,7 +28,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":1
+    "borderTop":1,
+    "categoryId":3,
+    "headquarters":false
   },
   {"id":4,
     "yBoardPosition":0,
@@ -33,7 +39,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":1
+    "borderTop":1,
+    "categoryId":4,
+    "headquarters":false
   },
   {"id":5,
     "yBoardPosition":0,
@@ -42,7 +50,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":1
+    "borderTop":1,
+    "categoryId":1,
+    "headquarters":false
   },
   {"id":6,
     "yBoardPosition":0,
@@ -51,7 +61,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":1
+    "borderTop":1,
+    "categoryId":2,
+    "headquarters":false
   },
   {"id":7,
     "yBoardPosition":0,
@@ -60,7 +72,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":1
+    "borderTop":1,
+    "categoryId":3,
+    "headquarters":true
   },
   {"id":8,
     "yBoardPosition":1,
@@ -69,7 +83,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":1,
-    "borderTop":0
+    "borderTop":0,
+    "categoryId":4,
+    "headquarters":false
   },
   {"id":9,
     "yBoardPosition":2,
@@ -78,7 +94,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":1,
-    "borderTop":0
+    "borderTop":0,
+    "categoryId":1,
+    "headquarters":false
   },
   {"id":10,
     "yBoardPosition":3,
@@ -87,7 +105,8 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":0
+    "borderTop":0,
+    "headquarters":false
   },
   {"id":11,
     "yBoardPosition":4,
@@ -96,7 +115,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":1,
-    "borderTop":0
+    "borderTop":0,
+    "categoryId":3,
+    "headquarters":false
   },
   {"id":12,
     "yBoardPosition":5,
@@ -105,7 +126,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":1,
-    "borderTop":0
+    "borderTop":0,
+    "categoryId":4,
+    "headquarters":false
   },
   {"id":13,
     "yBoardPosition":6,
@@ -114,7 +137,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":0
+    "borderTop":0,
+    "categoryId":2,
+    "headquarters":true
   },
   {"id":14,
     "yBoardPosition":6,
@@ -123,7 +148,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":1
+    "borderTop":1,
+    "categoryId":3,
+    "headquarters":false
   },
   {"id":15,
     "yBoardPosition":6,
@@ -132,7 +159,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":1
+    "borderTop":1,
+    "categoryId":4,
+    "headquarters":false
   },
   {"id":16,
     "yBoardPosition":6,
@@ -141,7 +170,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":0
+    "borderTop":0,
+    "categoryId":1,
+    "headquarters":false
   },
   {"id":17,
     "yBoardPosition":6,
@@ -150,7 +181,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":1
+    "borderTop":1,
+    "categoryId":2,
+    "headquarters":false
   },
   {"id":18,
     "yBoardPosition":6,
@@ -159,7 +192,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":1
+    "borderTop":1,
+    "categoryId":3,
+    "headquarters":false
   },
   {"id":19,
     "yBoardPosition":6,
@@ -168,7 +203,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":1,
-    "borderTop":0
+    "borderTop":0,
+    "categoryId":4,
+    "headquarters":true
   },
   {"id":20,
     "yBoardPosition":5,
@@ -177,7 +214,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":1,
-    "borderTop":0
+    "borderTop":0,
+    "categoryId":1,
+    "headquarters":false
   },
   {"id":21,
     "yBoardPosition":4,
@@ -186,7 +225,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":1,
-    "borderTop":0
+    "borderTop":0,
+    "categoryId":2,
+    "headquarters":false
   },
   {"id":22,
     "yBoardPosition":3,
@@ -195,7 +236,8 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":1,
-    "borderTop":0
+    "borderTop":0,
+    "headquarters":false
   },
   {"id":23,
     "yBoardPosition":2,
@@ -204,7 +246,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":1,
-    "borderTop":0
+    "borderTop":0,
+    "categoryId":4,
+    "headquarters":false
   },
   {"id":24,
     "yBoardPosition":1,
@@ -213,7 +257,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":1,
-    "borderTop":0
+    "borderTop":0,
+    "categoryId":3,
+    "headquarters":false
   },
   {"id":25,
     "yBoardPosition":1,
@@ -222,7 +268,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":1,
-    "borderTop":0
+    "borderTop":0,
+    "categoryId":1,
+    "headquarters":false
   },
   {"id":26,
     "yBoardPosition":2,
@@ -231,7 +279,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":1,
-    "borderTop":0
+    "borderTop":0,
+    "categoryId":3,
+    "headquarters":false
   },
   {"id":27,
     "yBoardPosition":3,
@@ -249,7 +299,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":1,
-    "borderTop":0
+    "borderTop":0,
+    "categoryId":2,
+    "headquarters":false
   },
   {"id":29,
     "yBoardPosition":5,
@@ -258,7 +310,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":1,
-    "borderTop":0
+    "borderTop":0,
+    "categoryId":3,
+    "headquarters":false
   },
   {"id":30,
     "yBoardPosition":3,
@@ -267,7 +321,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":1
+    "borderTop":1,
+    "categoryId":2,
+    "headquarters":false
   },
   {"id":31,
     "yBoardPosition":3,
@@ -276,7 +332,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":1
+    "borderTop":1,
+    "categoryId":4,
+    "headquarters":false
   },
   {"id":32,
     "yBoardPosition":3,
@@ -285,7 +343,9 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":1
+    "borderTop":1,
+    "categoryId":1,
+    "headquarters":false
   },
   {"id":33,
     "yBoardPosition":3,
@@ -294,6 +354,8 @@
     "centerSpace":0,
     "rollAgain":0,
     "borderLeft":0,
-    "borderTop":1
+    "borderTop":1,
+    "categoryId":4,
+    "headquarters":false
   }
 ]
