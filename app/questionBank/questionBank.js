@@ -49,9 +49,11 @@
         }
 
         QuestionBank.getQuestionforCategory = function(id){
-            if ( questionsByCategory[id] ){
-                var question = QuestionBank.pickRandomQuestion(questionsByCategory[id]);
-                removeQuestionFromGame(question);
+            if ( this.gameQuestionsByCategory[id] ){
+                var question = this.pickRandomQuestion(this.gameQuestionsByCategory[id]);
+                //TODO
+                //Disable question removal until we have tons of questions
+                //this.removeQuestionFromGame(question);
                 return question;
             } else {
                 return "No questions available for category";
@@ -59,7 +61,7 @@
         }
 
         QuestionBank.pickRandomQuestion = function(questions){
-            var randomNum = Math.floor((Math.random() * questions.length) + 1);
+            var randomNum = Math.floor(Math.random() * questions.length);
             return questions[randomNum];
         }
 

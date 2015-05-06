@@ -26,6 +26,27 @@
             this.color = data.color;
         }
 
+        Category.loadCategories = function() {
+            json.then(function(data) {
+                Category.categoryList = data.map(function(category) {
+                    return new Category(category);
+                });
+            })
+        }
+
+        Category.loadCategoriesWithCallback = function(callback) {
+            json.then(function(data) {
+                Category.categoryList = data.map(function(category) {
+                    return new Category(category);
+                });
+                callback(Category.categoryList);
+            })
+        }
+
+        Category.find = function(id){
+            return _.findWhere(this.categoryList, {id: id});
+        }
+
         /*
          * Load all categories from the json file
          * Return an array of Category instances

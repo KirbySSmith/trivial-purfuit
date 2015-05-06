@@ -12,6 +12,7 @@
         var vm = this;
 
         QuestionBank.prepareForGame();
+        Category.loadCategoriesWithCallback(function(response){ vm.categories = response; })
 
         vm.boardSpaces = [];
         vm.players = [];
