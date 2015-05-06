@@ -31,6 +31,8 @@
             this.rollAgain = data.rollAgain;
             this.borderLeft = data.borderLeft;
             this.borderTop = data.borderTop;
+            this.categoryId = data.categoryId;
+            this.headquarters = data.headquarters || false;
             this.top = this.yBoardPosition * 14.285;
             this.left = this.xBoardPosition * 14.285;
             /*this.borderLeft = this.xBoardPosition == 0 || (this.spokeSpace && this.yBoardPosition != 3);*/
@@ -68,6 +70,7 @@
         function verticallyAdjacent(currentSpace, boardSpace){
             return (boardSpace.yBoardPosition == currentSpace.yBoardPosition - 1 || boardSpace.yBoardPosition == currentSpace.yBoardPosition + 1) && boardSpace.xBoardPosition == currentSpace.xBoardPosition;
         }
+
         function horizontallyAdjacent(currentSpace, boardSpace){
             return (boardSpace.xBoardPosition == currentSpace.xBoardPosition - 1 || boardSpace.xBoardPosition == currentSpace.xBoardPosition + 1) && boardSpace.yBoardPosition == currentSpace.yBoardPosition
         }
