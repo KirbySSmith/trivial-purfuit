@@ -43,9 +43,10 @@
         }
 
         function takeTurn(result) {
+            result = 3;
             vm.disableRoll = true;
             vm.players[vm.currentPlayerIndex].numberOfMoves = result;
-            vm.players[vm.currentPlayerIndex].move(promptForDirection, nextTurn);
+            vm.players[vm.currentPlayerIndex].move(promptForDirection, nextTurn, vm.showRollAgain);
         }
 
         var nextTurn = function (){
@@ -65,7 +66,7 @@
             vm.disableDirectionRight = true;
             vm.disableDirectionDown = true;
             vm.disableDirectionLeft = true;
-            vm.players[vm.currentPlayerIndex].movePiece(promptForDirection, nextTurn, direction);
+            vm.players[vm.currentPlayerIndex].movePiece(promptForDirection, nextTurn, vm.showRollAgain, direction);
         };
 
         vm.rightAnswerClick = function(){
