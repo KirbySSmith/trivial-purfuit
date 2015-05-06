@@ -15,7 +15,7 @@
         var vm = this;
         //Category.forId(1);
 
-        QuestionBank.loadQuestionsWithCallback(function(response){ vm.questions = response; });
+        QuestionBank.loadWithCallback(function(response){ vm.questions = response; });
 
         Category.query().then(function(response){ vm.categories = response; })
 

@@ -34,13 +34,17 @@
             })
         }
 
-        Category.loadCategoriesWithCallback = function(callback) {
-            json.then(function(data) {
-                Category.categoryList = data.map(function(category) {
-                    return new Category(category);
-                });
-                callback(Category.categoryList);
-            })
+        Category.loadWithCallback = function(callback) {
+            if ( Category.categoryList.length > 0 ){
+                callback(angular.copy(Category.categoryList));
+            } else {
+                json.then(function(data) {
+                    Category.categoryList = data.map(function(category) {
+                        return new Category(category);
+                    });
+                    callback(angular.copy(Category.categoryList));
+                })
+            }
         }
 
         Category.find = function(id){

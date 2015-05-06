@@ -74,7 +74,7 @@
         }
 
         /*
-         * LoadQuestionsWithCallback
+         * LoadWithCallback
          *
          * If QuestionBank has questions
          *  yield a copy of those to the callback provided
@@ -83,16 +83,16 @@
          *  load questions from file provided or default and yield the result
          *
          */
-        QuestionBank.loadQuestionsWithCallback = function(callback, file){
+        QuestionBank.loadWithCallback = function(callback, file){
             var file = file || 'questionBank/questions.json';
             if ( QuestionBank.allQuestions.length > 0 ){
                 callback(angular.copy(QuestionBank.allQuestions));
             } else {
                 $http.get(file).then(function(response) {
-                    var questions = response.data.map(function(question) {
+                    QuestionBank.allQuestions = response.data.map(function(question) {
                         return new Question(question);
                     });
-                    callback(questions);
+                    callback(angular.copy(QuestionBank.allQuestions));
                 });
             }
         }
@@ -106,20 +106,11 @@
          *
          */
         QuestionBank.prepareForGame = function(file){
-            if ( QuestionBank.allQuestions.length == 0 ){
-                $http.get(file || 'questionBank/questions.json').then(function(response) {
-                    QuestionBank.allQuestions = response.data.map(function(question) {
-                        return new Question(question);
-                    });
-                    QuestionBank.resetHash();
-                    QuestionBank.gameQuestions = QuestionBank.allQuestions;
-                    QuestionBank.gameQuestionsByCategory = QuestionBank.questionsByCategory;
-                });
-            } else {
-              QuestionBank.resetHash();
-              QuestionBank.gameQuestions = QuestionBank.allQuestions;
-              QuestionBank.gameQuestionsByCategory = QuestionBank.questionsByCategory;
-            }
+            this.loadWithCallback(function(response){
+                QuestionBank.resetHash();
+                QuestionBank.gameQuestions = QuestionBank.allQuestions;
+                QuestionBank.gameQuestionsByCategory = QuestionBank.questionsByCategory;
+            })
         }
 
         return QuestionBank;
