@@ -108,7 +108,6 @@
       return availableDirections;
     };
 
-
     Player.prototype.findNextSpace = function (direction){
       var nextSpaceY = this.boardLocation.yBoardPosition;
       var nextSpaceX = this.boardLocation.xBoardPosition;
@@ -133,8 +132,22 @@
       return nextSpace;
     };
 
-    Player.prototype.collectCategory = function(categoryId){
-      switch(categoryId){
+    Player.prototype.winsGame = function(){
+      return this.boardLocation.centerSpace == 1 && this.allCakeCollected();
+    }
+
+    Player.prototype.collectIfHeadquarters = function(){
+      if (this.boardLocation.headquarters){
+        this.collectCategory();
+      }
+    }
+
+    Player.prototype.allCakeCollected = function(){
+      return this.categoryOneCollected && this.categoryTwoCollected && this.categoryThreeCollected && this.categoryFourCollected;
+    }
+
+    Player.prototype.collectCategory = function(){
+      switch(this.boardLocation.categoryId){
         case 1:
           this.categoryOneCollected = true;
           break;

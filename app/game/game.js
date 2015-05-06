@@ -69,7 +69,15 @@
         };
 
         vm.rightAnswerClick = function(){
-            vm.showRollAgain();
+            var player = vm.players[vm.currentPlayerIndex];
+            player.collectIfHeadquarters();
+
+            if ( player.winsGame() ){
+                //handle player winning
+                console.log('player wins');
+            } else {
+                vm.showRollAgain();
+            }
         };
 
         vm.continueClick = function(){
@@ -85,7 +93,6 @@
            //wrong answer
             nextTurn();
         };
-
 
         vm.showRollAgain = function(){
             var that = this;
