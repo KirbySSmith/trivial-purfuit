@@ -49,13 +49,36 @@
       this.boardLocation = that.findNextSpace(directionToMove);
       this.numberOfMoves--;
       if(this.numberOfMoves > 0) {
-        $timeout(function(){that.move(promptForDirection, nextTurn)}, 500);
+        $timeout(function(){that.move(promptForDirection)}, 500);
       }else{
         $timeout(function(){
           that.numberOfMoves = 0;
           that.previousSpace = null;
-          nextTurn()}, 500);
+            Player.prototype.showQuestion();
+        }, 500);
       }
+    };
+
+
+    Player.prototype.showQuestion = function(){
+        var that = this;
+        var catTitle = $('#category-title');
+        //need to get question category, for now:
+        var category = 'cat-holiday';
+        var categoryText = 'Places';
+        //need to get new question, for now:
+        var newQuestion = 'The last man to sign the Declaration of Independence, Matthew Thornton, was from which colony?';
+
+        catTitle.className = '';
+        catTitle.text(categoryText);
+        catTitle.addClass(category);
+        $('.question').text(newQuestion);
+
+        var modal =  $('#questionModal');
+
+        modal.addClass('rollAgain');
+        modal.removeClass('continue');
+        modal.modal('show');
     };
 
     //Static

@@ -67,6 +67,36 @@
             vm.players[vm.currentPlayerIndex].movePiece(promptForDirection, nextTurn, direction);
         };
 
+        vm.rightAnswerClick = function(){
+            vm.showRollAgain();
+        };
+
+        vm.continueClick = function(){
+            var that = this;
+            var modal =  $('#questionModal');
+            modal.modal('hide');
+            modal.addClass('rollAgain');
+            modal.removeClass('continue');
+        };
+
+        vm.wrongAnswerClick = function(){
+            var that = this;
+           //wrong answer
+            nextTurn();
+        };
+
+
+        vm.showRollAgain = function(){
+            var that = this;
+            var catTitle = $('#category-title');
+            catTitle.className = '';
+            catTitle.text("Congratulations!");
+            $('.question').text("It's still your turn. Roll again");
+
+            var modal =  $('#questionModal');
+            modal.removeClass('rollAgain');
+            modal.addClass('continue');
+        };
     }
 
 })();
