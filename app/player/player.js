@@ -2,8 +2,8 @@
   'use strict';
   angular.module('app').factory('Player',Player);
 
-  Player.$inject = ['Enum', 'BoardSpace', '$timeout'];
-  function Player(Enum, BoardSpace, $timeout){
+  Player.$inject = ['Enum', 'BoardSpace', '$timeout', 'QuestionBank', 'Category'];
+  function Player(Enum, BoardSpace, $timeout, QuestionBank, Category){
     /*
      * Player Class
      */
@@ -28,7 +28,7 @@
      *  numberOfMoves - number of spaces to move
      *  requestDirection - request direction from user call back
      */
-    Player.prototype.move = function(promptForDirection, nextTurn){
+    Player.prototype.move = function(promptForDirection, nextTurn, rollAgain){
       var that = this;
       return BoardSpace.findAdjacentSpaces(this.boardLocation).then(function(adjacentSpaceList)
       {
@@ -38,41 +38,69 @@
         if(availableDirections.length > 1){
           promptForDirection(availableDirections);
         }else{
-          that.movePiece(promptForDirection, nextTurn, availableDirections[0]);
+          that.movePiece(promptForDirection, nextTurn, rollAgain, availableDirections[0]);
         }
       });
     };
 
-    Player.prototype.movePiece = function(promptForDirection, nextTurn, directionToMove){
+    Player.prototype.movePiece = function(promptForDirection, nextTurn, rollAgain, directionToMove){
       var that = this;
       this.previousSpace = that.boardLocation;
       this.boardLocation = that.findNextSpace(directionToMove);
       this.numberOfMoves--;
       if(this.numberOfMoves > 0) {
-        $timeout(function(){that.move(promptForDirection)}, 500);
-      }else{
+        $timeout(function(){that.move(promptForDirection, nextTurn, rollAgain)}, 500);
+      } else {
         $timeout(function(){
+          if ( that.boardLocation.rollAgain ){
+            that.rollAgain(rollAgain);
+          } else if ( that.boardLocation.centerSpace ){
+            that.landedOnCenter();
+          } else {
+            that.showQuestion();
+          }
           that.numberOfMoves = 0;
           that.previousSpace = null;
-            Player.prototype.showQuestion();
         }, 500);
       }
     };
 
+    Player.prototype.rollAgain = function(rollAgain){
+      var modal =  $('#questionModal');
+      modal.addClass('rollAgain');
+      modal.removeClass('continue');
+      modal.modal('show');
+      rollAgain();
+    }
+
+    Player.prototype.landedOnCenter = function(){
+      if ( this.allCakeCollected() ){
+          this.showFinalQuestion();
+      } else {
+          //what do we do if on center square and not all squares collected?
+      }
+    }
+
+    Player.prototype.showFinalQuestion = function(){
+        //other users pick the category
+    }
 
     Player.prototype.showQuestion = function(){
-        var that = this;
-        var catTitle = $('#category-title');
-        //need to get question category, for now:
-        var category = 'cat-holiday';
-        var categoryText = 'Places';
-        //need to get new question, for now:
-        var newQuestion = 'The last man to sign the Declaration of Independence, Matthew Thornton, was from which colony?';
+        var that = this,
+            categoryId = this.boardLocation.categoryId,
+            catTitle = $('#category-title'),
+            category = 'cat-holiday',
+            question = QuestionBank.getQuestionforCategory(categoryId),
+            category = Category.find(categoryId);
+
+        if ( question == undefined ){
+          //uh oh. out of questions!
+        }
 
         catTitle.className = '';
-        catTitle.text(categoryText);
+        catTitle.text(category.title);
         catTitle.addClass(category);
-        $('.question').text(newQuestion);
+        $('.question').text(question.text);
 
         var modal =  $('#questionModal');
 
@@ -105,7 +133,6 @@
       return availableDirections;
     };
 
-
     Player.prototype.findNextSpace = function (direction){
       var nextSpaceY = this.boardLocation.yBoardPosition;
       var nextSpaceX = this.boardLocation.xBoardPosition;
@@ -130,8 +157,22 @@
       return nextSpace;
     };
 
-    Player.prototype.collectCategory = function(categoryId){
-      switch(categoryId){
+    Player.prototype.winsGame = function(){
+      return this.boardLocation.centerSpace == 1 && this.allCakeCollected();
+    }
+
+    Player.prototype.collectIfHeadquarters = function(){
+      if (this.boardLocation.headquarters){
+        this.collectCategory();
+      }
+    }
+
+    Player.prototype.allCakeCollected = function(){
+      return this.categoryOneCollected && this.categoryTwoCollected && this.categoryThreeCollected && this.categoryFourCollected;
+    }
+
+    Player.prototype.collectCategory = function(){
+      switch(this.boardLocation.categoryId){
         case 1:
           this.categoryOneCollected = true;
           break;

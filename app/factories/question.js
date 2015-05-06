@@ -2,10 +2,11 @@ angular.module('app').factory('Question', function(){
   /*
    * Question Class
    */
-  function Question(text, answer, categoryId){
-    this.text = text;
-    this.answer = answer;
-    this.categoryId = categoryId;
+  function Question(data){
+    this.id = data.id;
+    this.text = data.text || "";
+    this.answer = data.answer || "";
+    this.categoryId = data.category || 1;
   }
 
   return Question;

@@ -6,10 +6,13 @@
         .controller('Game', Game);
 
 
-    Game.$inject = ['$location', 'Player', 'Question', 'Category', 'BoardSpace', 'Enum'];
+    Game.$inject = ['$location', 'Player', 'Question', 'Category', 'BoardSpace', 'Enum', 'QuestionBank'];
 
-    function Game($location, Player, Question, Category, BoardSpace, Enum){
+    function Game($location, Player, Question, Category, BoardSpace, Enum, QuestionBank){
         var vm = this;
+
+        QuestionBank.prepareForGame();
+        Category.loadWithCallback(function(response){ vm.categories = response; })
 
         vm.boardSpaces = [];
         vm.players = [];
@@ -40,10 +43,12 @@
         }
 
         function takeTurn(result) {
+            result = 3;
             vm.disableRoll = true;
             vm.players[vm.currentPlayerIndex].numberOfMoves = result;
-            vm.players[vm.currentPlayerIndex].move(promptForDirection, nextTurn);
+            vm.players[vm.currentPlayerIndex].move(promptForDirection, nextTurn, vm.showRollAgain);
         }
+
         var nextTurn = function (){
             vm.players[vm.currentPlayerIndex].currentPlayer= false;
             vm.currentPlayerIndex = vm.currentPlayerIndex + 1 < vm.players.length ? vm.currentPlayerIndex + 1 : 0 ;
@@ -61,11 +66,19 @@
             vm.disableDirectionRight = true;
             vm.disableDirectionDown = true;
             vm.disableDirectionLeft = true;
-            vm.players[vm.currentPlayerIndex].movePiece(promptForDirection, nextTurn, direction);
+            vm.players[vm.currentPlayerIndex].movePiece(promptForDirection, nextTurn, vm.showRollAgain, direction);
         };
 
         vm.rightAnswerClick = function(){
-            vm.showRollAgain();
+            var player = vm.players[vm.currentPlayerIndex];
+            player.collectIfHeadquarters();
+
+            if ( player.winsGame() ){
+                //handle player winning
+                console.log('player wins');
+            } else {
+                vm.showRollAgain();
+            }
         };
 
         vm.continueClick = function(){
@@ -81,7 +94,6 @@
            //wrong answer
             nextTurn();
         };
-
 
         vm.showRollAgain = function(){
             var that = this;

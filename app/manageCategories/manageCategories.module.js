@@ -4,15 +4,15 @@
 (function () {
     'use strict';
 
-    angular.module('app.game', [])
+    angular.module('app.manageCategories', [])
         .config(RouteConfig);
 
     RouteConfig.$inject = ['$routeProvider'];
 
     function RouteConfig($routeProvider) {
-        $routeProvider.when('/game', {
-            templateUrl: 'game/game.html'
-        })
+        $routeProvider.when('/manage-categories', {
+            templateUrl: 'manageCategories/manageCategories.html'
+        });
     }
 
 })();
