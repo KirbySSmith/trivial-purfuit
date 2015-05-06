@@ -13,12 +13,20 @@
 
         vm.isBusy = true;
         vm.showSplash = true;
+        vm.isActive = isActive;
         activate();
 
         function activate() {
 //            TODO: Using a resolver on all routes or datacontext.ready in every controller
 //            return datacontext.ready([]).then(hideSplash);
             hideSplash();
+        }
+
+        //Set active nav link
+        //source: http://stackoverflow.com/questions/16199418/how-do-i-implement-the-bootstrap-navbar-active-class-with-angular-js
+        function isActive(viewLocation){
+            var locationPath = $location.path();
+            return locationPath.indexOf(viewLocation) == 0;
         }
 
         function hideSplash() {

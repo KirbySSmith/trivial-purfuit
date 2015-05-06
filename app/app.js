@@ -7,7 +7,8 @@
       'app.mainMenu',
       'app.manageQuestions',
       'app.boardSpace',
-      'app.game'
+      'app.game',
+      'app.version'
   ]).config(['$routeProvider', function($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/'});
   }])
