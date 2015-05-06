@@ -2,8 +2,8 @@
   'use strict';
   angular.module('app').factory('Player',Player);
 
-  Player.$inject = ['Enum', 'BoardSpace', '$timeout'];
-  function Player(Enum, BoardSpace, $timeout){
+  Player.$inject = ['Enum', 'BoardSpace', '$timeout', 'QuestionBank', 'Category'];
+  function Player(Enum, BoardSpace, $timeout, QuestionBank, Category){
     /*
      * Player Class
      */
@@ -54,25 +54,28 @@
         $timeout(function(){
           that.numberOfMoves = 0;
           that.previousSpace = null;
-            Player.prototype.showQuestion();
+          that.showQuestion();
         }, 500);
       }
     };
 
 
     Player.prototype.showQuestion = function(){
-        var that = this;
-        var catTitle = $('#category-title');
-        //need to get question category, for now:
-        var category = 'cat-holiday';
-        var categoryText = 'Places';
-        //need to get new question, for now:
-        var newQuestion = 'The last man to sign the Declaration of Independence, Matthew Thornton, was from which colony?';
+        var that = this,
+            categoryId = this.boardLocation.categoryId,
+            catTitle = $('#category-title'),
+            category = 'cat-holiday',
+            question = QuestionBank.getQuestionforCategory(categoryId),
+            category = Category.find(categoryId);
+
+        if ( question == undefined ){
+          //uh oh. out of questions!
+        }
 
         catTitle.className = '';
-        catTitle.text(categoryText);
+        catTitle.text(category.title);
         catTitle.addClass(category);
-        $('.question').text(newQuestion);
+        $('.question').text(question.text);
 
         var modal =  $('#questionModal');
 
