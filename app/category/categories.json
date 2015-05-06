@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "title": "Event",
+    "color": "white"
+  },
+  {
+    "id": 2,
+    "title": "People",
+    "color": "red"
+  },
+  {
+    "id": 3,
+    "title": "Places",
+    "color": "blue"
+  },
+  {
+    "id": 4,
+    "title": "Independence Day Holiday",
+    "color": "green"
+  }
+]

@@ -6,10 +6,12 @@
         .controller('Game', Game);
 
 
-    Game.$inject = ['$location', 'Player', 'Question', 'Category', 'BoardSpace', 'Enum'];
+    Game.$inject = ['$location', 'Player', 'Question', 'Category', 'BoardSpace', 'Enum', 'QuestionBank'];
 
-    function Game($location, Player, Question, Category, BoardSpace, Enum){
+    function Game($location, Player, Question, Category, BoardSpace, Enum, QuestionBank){
         var vm = this;
+
+        QuestionBank.prepareForGame();
 
         vm.boardSpaces = [];
         vm.players = [];
@@ -44,6 +46,7 @@
             vm.players[vm.currentPlayerIndex].numberOfMoves = result;
             vm.players[vm.currentPlayerIndex].move(promptForDirection, nextTurn);
         }
+
         var nextTurn = function (){
             vm.players[vm.currentPlayerIndex].currentPlayer= false;
             vm.currentPlayerIndex = vm.currentPlayerIndex + 1 < vm.players.length ? vm.currentPlayerIndex + 1 : 0 ;

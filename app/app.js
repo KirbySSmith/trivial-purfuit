@@ -5,8 +5,10 @@
       'app.core',
       'app.layout',
       'app.mainMenu',
-      'app.manageQuestions',
       'app.boardSpace',
+      'app.category',
+      'app.questionBank',
+      'app.manageQuestions',
       'app.game'
   ]).config(['$routeProvider', function($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/'});

@@ -391,3 +391,18 @@
 .options {
   text-align: center;
 }
+
+#manage-questions table td, #manage-questions table th{
+  padding:10px;
+}
+
+#manage-questions table .delete {
+  padding:0px;
+  text-align:right;
+}
+
+
+.buttons {
+  margin-top: 40px;
+  float:right;
+}
