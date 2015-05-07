@@ -279,10 +279,10 @@
 
 
 .border-top{
-    border-top: solid #6f6fff 1px;;
+    border-top: solid darkblue 1px;;
 }
 .border-left{
-    border-left: solid #6f6fff 1px;;
+    border-left: solid darkblue 1px;;
 }
 
 /*Game Piece Style*/
@@ -405,8 +405,30 @@
 }
 /*holiday*/
 .categoryFour{
-  background-color: darkgreen;
     background: rgba(0,100,0,.9);
+}
+
+/*gamepieces*/
+
+/*people*/
+#gameBoard .categoryOne{
+    background: rgb(139,0,0);
+    color: darkgrey;
+}
+/*events*/
+#gameBoard .categoryTwo{
+    background: rgb(250,250,240);
+    color: black;
+}
+/*places*/
+#gameBoard .categoryThree{
+    background: rgb(0,0,139);
+    color: darkgrey;
+}
+/*holiday*/
+#gameBoard .categoryFour{
+    background: rgb(0,100,0);
+    color: darkgrey;
 }
 
 /* Homepage styling */
