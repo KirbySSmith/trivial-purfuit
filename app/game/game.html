@@ -21,7 +21,12 @@
         </div>
     </div>
   <div id="gameBoardWrapper" class="col-sm-9 col-xs-12">
+
     <div id="gameBoard">
+        <div class="categoryBG categoryBGOne"></div>
+        <div class="categoryBG categoryBGTwo"></div>
+        <div class="categoryBG categoryBGThree"></div>
+        <div class="categoryBG categoryBGFour"></div>
       <div ng-repeat="boardSpaceInstance in vm.boardSpaces" class="gameSpace" ng-class="{ 'border-left': !boardSpaceInstance.borderLeft, 'border-top': !boardSpaceInstance.borderTop}"
            id="boardSpace{{boardSpaceInstance.id}}" ng-style="{top: boardSpaceInstance.top+'%', left: boardSpaceInstance.left+'%'}">
         {{boardSpaceInstance.id}}
