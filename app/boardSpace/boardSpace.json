@@ -30,7 +30,8 @@
     "borderLeft":0,
     "borderTop":1,
     "categoryId":3,
-    "headquarters":false
+    "headquarters":false,
+    "rollAgain": true
   },
   {"id":4,
     "yBoardPosition":0,
@@ -52,7 +53,8 @@
     "borderLeft":0,
     "borderTop":1,
     "categoryId":1,
-    "headquarters":false
+    "headquarters":false,
+    "rollAgain": true
   },
   {"id":6,
     "yBoardPosition":0,
@@ -96,7 +98,8 @@
     "borderLeft":1,
     "borderTop":0,
     "categoryId":1,
-    "headquarters":false
+    "headquarters":false,
+    "rollAgain": true
   },
   {"id":10,
     "yBoardPosition":3,
@@ -117,7 +120,8 @@
     "borderLeft":1,
     "borderTop":0,
     "categoryId":3,
-    "headquarters":false
+    "headquarters":false,
+    "rollAgain": true
   },
   {"id":12,
     "yBoardPosition":5,
@@ -161,7 +165,8 @@
     "borderLeft":0,
     "borderTop":1,
     "categoryId":4,
-    "headquarters":false
+    "headquarters":false,
+    "rollAgain": true
   },
   {"id":16,
     "yBoardPosition":6,
@@ -183,7 +188,8 @@
     "borderLeft":0,
     "borderTop":1,
     "categoryId":2,
-    "headquarters":false
+    "headquarters":false,
+    "rollAgain": true
   },
   {"id":18,
     "yBoardPosition":6,
@@ -227,7 +233,8 @@
     "borderLeft":1,
     "borderTop":0,
     "categoryId":2,
-    "headquarters":false
+    "headquarters":false,
+    "rollAgain": true
   },
   {"id":22,
     "yBoardPosition":3,
@@ -248,7 +255,8 @@
     "borderLeft":1,
     "borderTop":0,
     "categoryId":4,
-    "headquarters":false
+    "headquarters":false,
+    "rollAgain": true
   },
   {"id":24,
     "yBoardPosition":1,

@@ -27,9 +27,16 @@
         <div class="categoryBG categoryBGTwo"></div>
         <div class="categoryBG categoryBGThree"></div>
         <div class="categoryBG categoryBGFour"></div>
-      <div ng-repeat="boardSpaceInstance in vm.boardSpaces" class="gameSpace" ng-class="{ 'categoryFour':boardSpaceInstance.categoryId == 4, 'categoryThree':boardSpaceInstance.categoryId == 3,'categoryTwo':boardSpaceInstance.categoryId == 2,'categoryOne':boardSpaceInstance.categoryId == 1, 'border-left': !boardSpaceInstance.borderLeft, 'border-top': !boardSpaceInstance.borderTop}"
+      <div ng-repeat="boardSpaceInstance in vm.boardSpaces" class="gameSpace" ng-class="{ 'headquarters': boardSpaceInstance.headquarters,'categoryFour':boardSpaceInstance.categoryId == 4, 'categoryThree':boardSpaceInstance.categoryId == 3,'categoryTwo':boardSpaceInstance.categoryId == 2,'categoryOne':boardSpaceInstance.categoryId == 1, 'border-left': !boardSpaceInstance.borderLeft, 'border-top': !boardSpaceInstance.borderTop}"
            id="boardSpace{{boardSpaceInstance.id}}" ng-style="{top: boardSpaceInstance.top+'%', left: boardSpaceInstance.left+'%'}">
-            {{boardSpaceInstance.id}}
+          <div ng-if="boardSpaceInstance.headquarters">
+              <span ng-if="boardSpaceInstance.categoryId==1 && boardSpaceInstance.headquarters ">People</span>
+              <span ng-if="boardSpaceInstance.categoryId==2 && boardSpaceInstance.headquarters">Events</span>
+              <span ng-if="boardSpaceInstance.categoryId==3 && boardSpaceInstance.headquarters">Places</span>
+              <span ng-if="boardSpaceInstance.categoryId==4 && boardSpaceInstance.headquarters">Indepence Day Holiday</span>
+              HQ</div>
+          <span ng-if="!boardSpaceInstance.headquarters">{{boardSpaceInstance.id}}</span>
+          <span ng-if="boardSpaceInstance.rollAgain === true">Roll Again</span>
       </div>
       <purfuit-game-piece ng-repeat="player in vm.players" player="player" ></purfuit-game-piece>
     </div>
