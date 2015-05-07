@@ -1,5 +1,32 @@
-<div id="content" class="container">
-    <h1>
-        Set Up
-    </h1>
+<div id="content" class="container" data-ng-controller="SetUp as vm">
+    <div id="setUp">
+        <h1>
+            Game Set Up
+        </h1>
+
+        <h3>Number of Players</h3>
+        <div class="dropdown">
+            <div>How many players would you like to have in this game?</div>
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+                Choose Number of Players
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
+                <li role="presentation"><a role="menuitem" ng-click="vm.playerCount(1)" tabindex="-1">1 Player</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="vm.playerCount(2)">2 Players</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="vm.playerCount(3)">3 Players</a></li>
+                <li role="presentation"><a role="menuitem" tabindex="-1" ng-click="vm.playerCount(4)">4 Players</a></li>
+            </ul>
+        </div>
+
+
+        <h3>Player Names</h3>
+        <div class="col-xs-12 col-sm-8 col-md-6 player-names" ng-repeat="c in vm.count">Player {{ c.count }} 
+            <input type="text" class="form-control" placeholder="Player Name" />
+        </div>
+
+        <div class="col-xs-12 buttons">
+            <button class="btn btn-lg btn-primary" ng-click="vm.save()"> Save Changes </button>
+        </div>
+    </div>
 </div>

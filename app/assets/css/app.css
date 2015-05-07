@@ -453,3 +453,15 @@
 }
 
 /* End: Question Styling */
+
+/*Page Setup*/
+
+.player-names {
+    padding-left: 0;
+    margin-top: 10px;
+}
+#setUp .buttons {
+    margin-top: 30px;
+    padding-left: 0;
+}
+
