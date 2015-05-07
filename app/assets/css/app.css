@@ -235,9 +235,39 @@
   padding-top: 100%;
   position: relative;
   box-shadow:  10px 10px 5px #888888;
+}
 
-  background: #cccccc url(../images/flags-usa.jpg)  center center no-repeat;
+.categoryBG{
+  position: absolute;
+  height: 31%;
+  width: 31%;
+  margin: 10%;
+  background: #cccccc center center no-repeat;
   background-size: cover;
+}
+.categoryBGOne{
+  top:0;
+  left:0;
+  margin: 13% 6% 6% 13%;
+  background-image: url(../img/portfolio/places.jpg);
+}
+.categoryBGTwo{
+  top:0;
+  left:50%;
+  margin: 13% 13% 6% 6%;
+  background-image: url(../img/portfolio/people.jpg);
+}
+.categoryBGThree{
+  top:50%;
+  left:0;
+  margin: 6% 6% 13% 13%;
+  background-image: url(../img/portfolio/events.jpg);
+}
+.categoryBGFour{
+  top:50%;
+  left:50%;
+  margin: 6% 13% 13% 6%;
+  background-image: url(../img/portfolio/holiday.jpg);
 }
 .gameSpace{
   background: ghostwhite;
@@ -249,10 +279,10 @@
 
 
 .border-top{
-    border-top: solid #6f6fff 1px;;
+    border-top: solid darkblue 1px;;
 }
 .border-left{
-    border-left: solid #6f6fff 1px;;
+    border-left: solid darkblue 1px;;
 }
 
 /*Game Piece Style*/
@@ -375,8 +405,30 @@
 }
 /*holiday*/
 .categoryFour{
-  background-color: darkgreen;
     background: rgba(0,100,0,.9);
+}
+
+/*gamepieces*/
+
+/*people*/
+#gameBoard .categoryOne{
+    background: rgb(139,0,0);
+    color: darkgrey;
+}
+/*events*/
+#gameBoard .categoryTwo{
+    background: rgb(250,250,240);
+    color: black;
+}
+/*places*/
+#gameBoard .categoryThree{
+    background: rgb(0,0,139);
+    color: darkgrey;
+}
+/*holiday*/
+#gameBoard .categoryFour{
+    background: rgb(0,100,0);
+    color: darkgrey;
 }
 
 /* Homepage styling */
@@ -396,12 +448,9 @@
 
 .options {
   text-align: center;
-    margin-top: 100px;
-    margin-bottom: 100px;
 }
-
-#banner {
-    margin-top: -100px;
+#mainMenu-view{
+  height: 100%;
 }
 
 /* Start: Question Styling */
