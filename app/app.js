@@ -10,6 +10,7 @@
       'app.questionBank',
       'app.manageQuestions',
       'app.manageCategories',
+      'app.setUp',
       'app.game'
   ]).config(['$routeProvider', function($routeProvider) {
     $routeProvider.otherwise({redirectTo: '/'});
