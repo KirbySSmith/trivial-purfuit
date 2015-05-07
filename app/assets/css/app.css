@@ -396,29 +396,13 @@
 
 .options {
   text-align: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
-/* Start: Manage Questions / Categories Styling */
-#manage-questions table, #manage-categories table { width: 100%; }
-
-#manage-questions table td, #manage-questions table th, #manage-categories table td, #manage-categories table th{ padding:10px; }
-
-#manage-questions .buttons , #manage-categories .buttons{
-  margin-top: 40px;
-  float:right;
+#banner {
+    margin-top: -100px;
 }
-
-#manage-questions table .delete {
-  padding:0px;
-  text-align:right;
-}
-
-#manage-categories .table-wrapper {
-  width: 50%;
-  margin-left: auto;
-  margin-right: auto;
-}
-/* End: Manage Questions / Categories Styling */
 
 /* Start: Question Styling */
 .question-status {
