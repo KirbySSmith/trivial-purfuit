@@ -1,0 +1,45 @@
+<div id="content" class="container" data-ng-controller="SetUp as vm" ng-init="vm.playerCount(1)">
+    <div id="setUp">
+        <h1>
+            Game Set Up
+        </h1>
+
+        <h3>Number of Players</h3>
+        <div>How many players would you like to have in this game?</div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" ng-click="vm.playerCount(1)" id="optionsRadios1" value="option1" checked>
+                1 Players
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" ng-click="vm.playerCount(2)" name="optionsRadios" id="optionsRadios2" value="option2">
+               2 Players
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" ng-click="vm.playerCount(3)" id="optionsRadios3" value="option3">
+                3 Players
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" ng-click="vm.playerCount(4)" id="optionsRadios4" value="option4">
+               4 Players
+            </label>
+        </div>
+
+
+        <h3>Player Names</h3>
+        <div>Assign each player a name.</div>
+        <div class="col-xs-12 col-sm-8 col-md-6 player-names" ng-repeat="c in vm.count">Player {{ c.count }}
+            <input type="text" class="form-control" placeholder="Player Name" />
+        </div>
+
+        <div class="col-xs-12 buttons">
+            <button class="btn btn-lg btn-primary" ng-click="vm.save()"> Save Changes </button>
+        </div>
+    </div>
+</div>

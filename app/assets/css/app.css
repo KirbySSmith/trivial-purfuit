@@ -279,10 +279,10 @@
 
 
 .border-top{
-    border-top: solid darkblue 1px;;
+    border-top: solid #6f6fff 1px;;
 }
 .border-left{
-    border-left: solid darkblue 1px;;
+    border-left: solid #6f6fff 1px;;
 }
 
 /*Game Piece Style*/
@@ -502,3 +502,15 @@
 }
 
 /* End: Question Styling */
+
+/*Page Setup*/
+
+.player-names {
+    padding-left: 0;
+    margin-top: 10px;
+}
+#setUp .buttons {
+    margin-top: 30px;
+    padding-left: 0;
+}
+
