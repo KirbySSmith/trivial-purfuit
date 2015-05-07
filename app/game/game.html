@@ -36,7 +36,7 @@
               <span ng-if="boardSpaceInstance.categoryId==4 && boardSpaceInstance.headquarters">Indepence Day Holiday</span>
               HQ</div>
           <span ng-if="!boardSpaceInstance.headquarters">{{boardSpaceInstance.id}}</span>
-          <span ng-if="boardSpaceInstance.rollAgain === true">Roll Again</span>
+          <span ng-if="boardSpaceInstance.rollAgain === 1">Roll Again</span>
       </div>
       <purfuit-game-piece ng-repeat="player in vm.players" player="player" ></purfuit-game-piece>
     </div>
