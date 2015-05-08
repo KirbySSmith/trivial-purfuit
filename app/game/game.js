@@ -12,7 +12,7 @@
         var vm = this;
 
         QuestionBank.prepareForGame();
-        Category.loadWithCallback(function(response){ vm.categories = response; })
+        Category.loadWithCallback(function(response){ vm.categories = response; });
 
         vm.boardSpaces = [];
         vm.players = [];
@@ -21,7 +21,7 @@
         vm.players.push(new Player(3, "Frances", "#ffdb99"));
         vm.players.push(new Player(4, "Sam", "#ffff7f"));
         vm.currentPlayerIndex = 0;
-        D6.baseUrl = "assets/images/diceRoll/";
+        CustomD6.baseUrl = "assets/images/diceRoll/";
         vm.disableDirectionUp = true;
         vm.disableDirectionRight = true;
         vm.disableDirectionDown = true;
@@ -29,7 +29,7 @@
         vm.disableRoll = false;
 
 
-        D6.dice(2, takeTurn);
+        CustomD6.dice(2, takeTurn);
         activate();
 
         function activate() {
@@ -43,7 +43,6 @@
         }
 
         function takeTurn(result) {
-            result = 3;
             vm.disableRoll = true;
             vm.players[vm.currentPlayerIndex].numberOfMoves = result;
             vm.players[vm.currentPlayerIndex].move(promptForDirection, nextTurn, vm.showRollAgain);
@@ -87,6 +86,7 @@
             modal.modal('hide');
             modal.addClass('rollAgain');
             modal.removeClass('continue');
+            vm.disableRoll = false;
         };
 
         vm.wrongAnswerClick = function(){
@@ -105,6 +105,10 @@
             var modal =  $('#questionModal');
             modal.removeClass('rollAgain');
             modal.addClass('continue');
+        };
+
+        vm.rollDice = function(){
+            CustomD6.roll();
         };
     }
 

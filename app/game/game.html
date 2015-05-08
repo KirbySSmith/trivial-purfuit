@@ -48,6 +48,8 @@
       {{vm.players[vm.currentPlayerIndex].name}}
     </div>
     <div id="diceall" class="col-sm-12 col-xs-4 ">
+        <div id="dice_diceGroup_0" class="diceGroup"><img id="dice1" class="die" src="assets/images/diceRoll/die-6.gif"><img id="dice2" class="die" src="assets/images/diceRoll/die-6.gif"> <span id="sidebar_0" class="sidebar"></span></div>
+        <button type="button" id="dicebutton" ng-disabled="vm.disableRoll" ng-click="vm.rollDice()"  >Roll Dice</button>
     </div>
     <div id="gamePieceControls" class="col-sm-12 col-xs-8 ">
       <table>
