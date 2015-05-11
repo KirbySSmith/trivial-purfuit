@@ -44,10 +44,10 @@
     };
 
     Player.prototype.movePiece = function(promptForDirection, nextTurn, rollAgain, directionToMove){
-      var that = this;
-      this.previousSpace = that.boardLocation;
-      this.boardLocation = that.findNextSpace(directionToMove);
+      this.previousSpace = this.boardLocation;
+      this.boardLocation = this.findNextSpace(directionToMove);
       this.numberOfMoves--;
+      var that = this;
       if(this.numberOfMoves > 0) {
         $timeout(function(){that.move(promptForDirection, nextTurn, rollAgain)}, 500);
       } else {
@@ -89,18 +89,19 @@
         var that = this,
             categoryId = this.boardLocation.categoryId,
             catTitle = $('#category-title'),
-            category = 'cat-holiday',
             question = QuestionBank.getQuestionforCategory(categoryId),
             category = Category.find(categoryId);
 
-        if ( question == undefined ){
-          //uh oh. out of questions!
+        if ( question.text == undefined ){
+          $('.question').text("uh oh. out of questions!");
+        }else{
+          $('.question').text(question.text);
+          $('.answer').text(question.answer);
         }
 
         catTitle.className = '';
         catTitle.text(category.title);
         catTitle.addClass(category);
-        $('.question').text(question.text);
 
         var modal =  $('#questionModal');
 

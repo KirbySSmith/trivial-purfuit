@@ -27,7 +27,7 @@
         vm.disableDirectionDown = true;
         vm.disableDirectionLeft = true;
         vm.disableRoll = false;
-
+        vm.answerHidden = true;
 
         CustomD6.dice(2, takeTurn);
         activate();
@@ -68,8 +68,11 @@
             vm.players[vm.currentPlayerIndex].movePiece(promptForDirection, nextTurn, vm.showRollAgain, direction);
         };
 
-
+        vm.showAnswerClick = function(){
+            vm.answerHidden = false;
+        };
         vm.rightAnswerClick = function(){
+            vm.answerHidden = true;
             var player = vm.players[vm.currentPlayerIndex];
             player.collectIfHeadquarters();
 
@@ -105,6 +108,7 @@
         };
 
         vm.continueClick = function(){
+            vm.answerHidden = true;
             var that = this;
             var modal =  $('#questionModal');
             modal.modal('hide');
@@ -114,6 +118,7 @@
         };
 
         vm.wrongAnswerClick = function(){
+            vm.answerHidden = true;
             var that = this;
            //wrong answer
             nextTurn();

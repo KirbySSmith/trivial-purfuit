@@ -28,14 +28,21 @@
                 </div>
                 <div class="modal-body question">
                 </div>
-                <div class="modal-footer">
-                    <div class="question-status">
-                        How did you do?
-                    </div>
+
+                <div ng-show="vm.answerHidden" class="modal-footer">
                     <button id="continueBtn" type="button" class="btn btn-default" ng-click="vm.continueClick()">Continue</button>
-                    <button id="rightAnswerBtn" type="button" class="btn btn-default" ng-click="vm.rightAnswerClick()" >Right Answer</button>
-                    <button id="wrongAnswerBtn" type="button" class="btn btn-default" ng-click="vm.wrongAnswerClick()" data-dismiss="modal">Wrong Answer</button>
+                    <button id="showAnswerBtn" type="button" class="btn btn-default" ng-click="vm.showAnswerClick()" >Show Answer</button>
                 </div>
+
+                    <div class="modal-body answer"  ng-hide="vm.answerHidden">
+                    </div>
+                    <div class="modal-footer" ng-hide="vm.answerHidden">
+                        <div class="question-status">
+                            How did you do?
+                        </div>
+                        <button id="rightAnswerBtn" type="button" class="btn btn-default" ng-click="vm.rightAnswerClick()" >Right Answer</button>
+                        <button id="wrongAnswerBtn" type="button" class="btn btn-default" ng-click="vm.wrongAnswerClick()" data-dismiss="modal">Wrong Answer</button>
+                    </div>
             </div>
         </div>
     </div>
