@@ -17,8 +17,7 @@
 
         QuestionBank.loadWithCallback(function(response){ vm.questions = response; });
 
-        Category.query().then(function(response){ vm.categories = response; })
-
+        Category.loadWithCallback(function(response){ vm.categories = response; });
 
         vm.deleteQuestion = function(question){
           var index = this.questions.indexOf(question);

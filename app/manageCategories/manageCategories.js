@@ -18,7 +18,6 @@
         Category.loadWithCallback(function(response){ vm.categories = response; })
 
         vm.save = function(){
-          debugger
           Category.categoryList = this.categories;
         }
     }
