@@ -1,5 +1,24 @@
 <div id="content" class="container">
     <div id="game-view" data-ng-controller="Game as vm">
+    <!-- Win Modal -->
+    <div class="modal fade" id="winModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header win">
+                    Congratulations
+                    <span class="player-name"></span>
+                </div>
+                <div class="modal-body">
+                    Thank you for playing Trivial Purfuit!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="vm.resetGame()"> Play Again </button>
+                    <a href="#/setup/" ng-click="vm.goToSetup()"><button type="button" class="btn btn-default"> Go To Setup </button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Question Modal -->
     <div class="modal fade" id="questionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
