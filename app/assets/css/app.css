@@ -391,25 +391,16 @@
   }
 }
 
-/*people*/
-.categoryOne{
-    background: rgba(139,0,0,.9);
-}
-/*events*/
-.categoryTwo{
-    background: rgba(250,250,240,.9);
-    color: black;
-}
-/*places*/
-.categoryThree{
-    background: rgba(0,0,139,.9);
-}
-/*holiday*/
-.categoryFour{
-    background: rgba(0,100,0,.9);
-}
 
 /*gamepieces*/
+
+/*rollAgain*/
+#gameBoard .rollAgain{
+  background: #bfbfbf center center no-repeat;
+  background-image: url(../images/diceRoll/dices-6.gif);
+  background-size: 25%;
+
+}
 
 /*people*/
 #gameBoard .categoryOne{

@@ -68,6 +68,7 @@
             vm.players[vm.currentPlayerIndex].movePiece(promptForDirection, nextTurn, vm.showRollAgain, direction);
         };
 
+
         vm.rightAnswerClick = function(){
             var player = vm.players[vm.currentPlayerIndex];
             player.collectIfHeadquarters();
@@ -84,13 +85,13 @@
         vm.resetGame = function(){
             //For now, just reload the page
             location.reload();
-        }
+        };
 
         vm.goToSetup = function(){
             var modal = $('#winModal');
             modal.modal('hide');
             $('.modal-backdrop').remove();
-        }
+        };
 
         vm.playerWins = function(){
             var modal  =  $('#winModal'),

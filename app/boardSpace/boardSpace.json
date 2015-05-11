@@ -29,7 +29,6 @@
     "rollAgain":1,
     "borderLeft":0,
     "borderTop":1,
-    "categoryId":1,
     "headquarters":false
   },
   {"id":4,
@@ -51,7 +50,6 @@
     "rollAgain":1,
     "borderLeft":0,
     "borderTop":1,
-    "categoryId":3,
     "headquarters":false
   },
   {"id":6,
@@ -95,7 +93,6 @@
     "rollAgain":1,
     "borderLeft":1,
     "borderTop":0,
-    "categoryId":3,
     "headquarters":false
   },
   {"id":10,
@@ -117,7 +114,6 @@
     "rollAgain":1,
     "borderLeft":1,
     "borderTop":0,
-    "categoryId":2,
     "headquarters":false
   },
   {"id":12,
@@ -161,7 +157,6 @@
     "rollAgain":1,
     "borderLeft":0,
     "borderTop":1,
-    "categoryId":2,
     "headquarters":false
   },
   {"id":16,
@@ -183,7 +178,6 @@
     "rollAgain":1,
     "borderLeft":0,
     "borderTop":1,
-    "categoryId":4,
     "headquarters":false
   },
   {"id":18,
@@ -227,7 +221,6 @@
     "rollAgain":1,
     "borderLeft":1,
     "borderTop":0,
-    "categoryId":4,
     "headquarters":false
   },
   {"id":22,
@@ -249,7 +242,6 @@
     "rollAgain":1,
     "borderLeft":1,
     "borderTop":0,
-    "categoryId":1,
     "headquarters":false
   },
   {"id":24,
