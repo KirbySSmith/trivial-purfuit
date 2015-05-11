@@ -51,18 +51,6 @@
             return _.findWhere(this.categoryList, {id: id});
         }
 
-        /*
-         * Load all categories from the json file
-         * Return an array of Category instances
-         */
-        Category.query = function() {
-            return json.then(function(data) {
-                return data.map(function(category) {
-                    return new Category(category);
-                });
-            })
-        };
-
         return Category;
     }
 })();

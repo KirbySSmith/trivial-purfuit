@@ -74,10 +74,33 @@
 
             if ( player.winsGame() ){
                 //handle player winning
+                vm.playerWins();
                 console.log('player wins');
             } else {
                 vm.showRollAgain();
             }
+        };
+
+        vm.resetGame = function(){
+            //For now, just reload the page
+            location.reload();
+        }
+
+        vm.goToSetup = function(){
+            var modal = $('#winModal');
+            modal.modal('hide');
+            $('.modal-backdrop').remove();
+        }
+
+        vm.playerWins = function(){
+            var modal  =  $('#winModal'),
+                player = vm.players[vm.currentPlayerIndex];
+
+            modal.find(".player-name").text(player.name);
+            modal.modal({
+                backdrop: 'static',
+                keyboard: false
+            });
         };
 
         vm.continueClick = function(){

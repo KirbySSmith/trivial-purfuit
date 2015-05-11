@@ -515,3 +515,8 @@
     padding-left: 0;
 }
 
+/* Win Modal */
+.win.modal-header {
+  font-size: 30px;
+  font-weight: bold;
+}
