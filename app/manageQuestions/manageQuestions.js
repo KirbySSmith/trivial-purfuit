@@ -1,4 +1,3 @@
-
 /**
  * Created by ksmit207 on 1/2/2015.
  */
@@ -9,9 +8,9 @@
         .controller('ManageQuestions', ManageQuestions);
 
 
-    ManageQuestions.$inject = ['$location', 'QuestionBank', 'Category', 'Question'];
+    ManageQuestions.$inject = ['$scope', '$location', 'QuestionBank', 'Category', 'Question'];
 
-    function ManageQuestions($location, QuestionBank, Category, Question){
+    function ManageQuestions($scope, $location, QuestionBank, Category, Question){
         var vm = this;
         //Category.forId(1);
 
@@ -33,5 +32,37 @@
           QuestionBank.allQuestions = this.questions;
           QuestionBank.resetHash();
         }
+
+        vm.exportQuestions = function() {
+          var jsonQuestions = JSON.stringify(QuestionBank.allQuestions),
+              a             = document.createElement('a');
+
+          a.href        = 'data:attachment/json,' + encodeURIComponent(jsonQuestions);
+          a.target      = '_blank';
+          a.download    = 'myFile.json';
+
+          document.body.appendChild(a);
+          a.click();
+          $(a).remove();
+        }
+
+        vm.loadFile = function() {
+          var files = $("#files")[0].files, // FileList object
+              file  = _.first(files),
+             reader = new FileReader();
+
+          reader.onload = (function(theFile) {
+            return function(e) {
+              QuestionBank.loadJSONWithCallback(e.target.result, function(response){
+                vm.questions = response; $scope.$apply();
+              });
+            };
+          })(file);
+
+          if ( file ){
+              reader.readAsText(file);
+          }
+        }
     }
+
 })();

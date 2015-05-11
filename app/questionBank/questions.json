@@ -3,24 +3,24 @@
     "id": 1,
     "text": "Example question 1",
     "answer": "Example answer 1",
-    "category": 1
+    "categoryId": 1
   },
   {
     "id": 2,
     "text": "Example question 2",
     "answer": "Example answer 2",
-    "category": 2
+    "categoryId": 2
   },
   {
     "id": 3,
     "text": "Example question 3",
     "answer": "Example answer 3",
-    "category": 3
+    "categoryId": 3
   },
   {
     "id": 4,
     "text": "Example question 4",
     "answer": "Example answer 4",
-    "category": 4
+    "categoryId": 4
   }
 ]

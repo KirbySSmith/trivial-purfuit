@@ -4,6 +4,9 @@
 </h1>
 
 <div id="manage-questions" data-ng-controller="ManageQuestions as vm">
+  <input type="file" id="files"/>
+  <button class="btn btn-small btn-primary" ng-click="vm.loadFile()"> Load </button>
+  <output id="list"></output>
   <table style="width:100%">
     <tr>
       <th></th>
@@ -33,6 +36,7 @@
   <div class="buttons">
   <button class="btn btn-lg btn-primary" ng-click="vm.addQuestion()"> Add New Question </button>
   <button class="btn btn-lg btn-primary" ng-click="vm.saveQuestions()"> Save Questions </button>
+  <button class="btn btn-lg btn-primary" ng-click="vm.exportQuestions()"> Export Questions </button>
   </div>
 </div>
 </div>
