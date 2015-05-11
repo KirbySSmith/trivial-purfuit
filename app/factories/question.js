@@ -6,7 +6,7 @@ angular.module('app').factory('Question', function(){
     this.id = data.id;
     this.text = data.text || "";
     this.answer = data.answer || "";
-    this.categoryId = data.category || 1;
+    this.categoryId = data.categoryId || 1;
   }
 
   return Question;

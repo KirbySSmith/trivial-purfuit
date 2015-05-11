@@ -97,6 +97,11 @@
             }
         }
 
+        QuestionBank.loadJSONWithCallback = function(jsonData, callback){
+            QuestionBank.allQuestions = _.map(JSON.parse(jsonData), function(item){ return new Question(item)});
+            callback(angular.copy(QuestionBank.allQuestions));
+        }
+
         /*
          * PrepareforGame
          *
