@@ -1,4 +1,4 @@
-<div id="content" class="container" data-ng-controller="SetUp as vm" ng-init="vm.playerCount(1)">
+<div id="content" class="container" data-ng-controller="SetUp as vm">
     <div id="setUp">
         <h1>
             Game Set Up
@@ -8,25 +8,25 @@
         <div>How many players would you like to have in this game?</div>
         <div class="radio">
             <label>
-                <input type="radio" name="optionsRadios" ng-click="vm.playerCount(1)" id="optionsRadios1" value="option1" checked>
+                <input type="radio" name="optionsRadios" ng-click="vm.updateCount(1)" id="optionsRadios1" value="option1" checked>
                 1 Players
             </label>
         </div>
         <div class="radio">
             <label>
-                <input type="radio" ng-click="vm.playerCount(2)" name="optionsRadios" id="optionsRadios2" value="option2">
+                <input type="radio" ng-click="vm.updateCount(2)" name="optionsRadios" id="optionsRadios2" value="option2">
                2 Players
             </label>
         </div>
         <div class="radio">
             <label>
-                <input type="radio" name="optionsRadios" ng-click="vm.playerCount(3)" id="optionsRadios3" value="option3">
+                <input type="radio" name="optionsRadios" ng-click="vm.updateCount(3)" id="optionsRadios3" value="option3">
                 3 Players
             </label>
         </div>
         <div class="radio">
             <label>
-                <input type="radio" name="optionsRadios" ng-click="vm.playerCount(4)" id="optionsRadios4" value="option4">
+                <input type="radio" name="optionsRadios" ng-click="vm.updateCount(4)" id="optionsRadios4" value="option4">
                4 Players
             </label>
         </div>
@@ -34,8 +34,11 @@
 
         <h3>Player Names</h3>
         <div>Assign each player a name.</div>
-        <div class="col-xs-12 col-sm-8 col-md-6 player-names" ng-repeat="c in vm.count">Player {{ c.count }}
-            <input type="text" class="form-control" placeholder="Player Name" />
+        <div class="col-xs-12 col-sm-8 col-md-6 player-inputs" ng-repeat="player in vm.tempPlayers">
+          <div>Player {{ $index + 1}}</div>
+            <input type="text" class="player-name form-control" placeholder="Player Name" ng-model="player.name"/>
+
+            <input type="color" class="player-color form-control" ng-model="player.color">
         </div>
 
         <div class="col-xs-12 buttons">

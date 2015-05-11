@@ -7,12 +7,14 @@
     /*
      * Player Class
      */
-    function Player(id, name, bgColor){
+    Player.playerList = [];
+
+    function Player(id, name, color){
       this.id = id;
       this.name = name;
       this.boardLocation = {};
       this.currentPlayer = false;
-      this.bgColor = bgColor;
+      this.color = color;
       this.numberOfMoves = 0;
       this.categoryOneCollected = false;
       this.categoryTwoCollected = false;
@@ -20,6 +22,22 @@
       this.categoryFourCollected = false;
       this.previousSpace = null;
       this.adjacentSpaceList = [];
+    }
+
+    Player.setPlayers = function(players){
+        this.playerList = players;
+    }
+
+    Player.all = function(){
+        return this.playerList;
+    }
+
+    Player.prototype.bgColor = function(){
+        return ColorLuminance(this.color, +.9);
+    }
+
+    Player.prototype.borderColor = function(){
+        return this.color;
     }
 
     /*
