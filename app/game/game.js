@@ -15,11 +15,11 @@
         Category.loadWithCallback(function(response){ vm.categories = response; });
 
         vm.boardSpaces = [];
-        vm.players = [];
-        vm.players.push(new Player(1, "Kirby", "#99cc99"));
-        vm.players.push(new Player(2, "Tommy", "#cc99cc"));
-        vm.players.push(new Player(3, "Frances", "#ffdb99"));
-        vm.players.push(new Player(4, "Sam", "#ffff7f"));
+        vm.players = Player.all();
+        //vm.players.push(new Player(1, "Kirby", "#99cc99"));
+        //vm.players.push(new Player(2, "Tommy", "#cc99cc"));
+        //vm.players.push(new Player(3, "Frances", "#ffdb99"));
+        //vm.players.push(new Player(4, "Sam", "#ffff7f"));
         vm.currentPlayerIndex = 0;
         CustomD6.baseUrl = "assets/images/diceRoll/";
         vm.disableDirectionUp = true;
