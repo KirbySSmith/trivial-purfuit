@@ -6,7 +6,9 @@
 <div id="manage-questions" data-ng-controller="ManageQuestions as vm">
   <input type="file" id="files"/>
   <button class="btn btn-small btn-primary" ng-click="vm.loadFile()"> Load </button>
-  <output id="list"></output>
+
+  <div class="success-message" style="display: none; color: green">Success!</div>
+  <div class="error-message" style="display: none; color: red">Please Make Sure All Players Have Names!</div>
   <table style="width:100%">
     <tr>
       <th></th>
@@ -19,10 +21,10 @@
         <input id="id" type="hidden" class="form-control" ng-model="question.id">
       </td>
       <td>
-        <input type="text" class="form-control" placeholder="Please type your question here" ng-model="question.text">
+        <input type="text" class="validate form-control" placeholder="Please type your question here" ng-model="question.text">
       </td>
       <td>
-        <input type="text" class="form-control" placeholder="Please type the answer here" ng-model="question.answer">
+        <input type="text" class="validate form-control" placeholder="Please type the answer here" ng-model="question.answer">
       </td>
       <td>
         <select class="form-control" ng-model="question.categoryId" ng-options="category.id as category.title for category in vm.categories">
@@ -35,7 +37,7 @@
   </table>
   <div class="buttons">
   <button class="btn btn-lg btn-primary" ng-click="vm.addQuestion()"> Add New Question </button>
-  <button class="btn btn-lg btn-primary" ng-click="vm.saveQuestions()"> Save Questions </button>
+  <button class="btn btn-lg btn-primary" ng-click="vm.save()"> Save Questions </button>
   <button class="btn btn-lg btn-primary" ng-click="vm.exportQuestions()"> Export Questions </button>
   </div>
 </div>

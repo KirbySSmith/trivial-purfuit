@@ -28,9 +28,17 @@
           this.questions.push(new Question({id: newId}));
         }
 
-        vm.saveQuestions = function(){
-          QuestionBank.allQuestions = this.questions;
-          QuestionBank.resetHash();
+        vm.save = function(){
+          if ( vm.validate() ){
+              QuestionBank.allQuestions = this.questions;
+              QuestionBank.resetHash();
+              Category.categoryList = this.categories;
+              $(".success-message").fadeIn(2000).fadeOut(1000);
+              $(".error-message").hide();
+          } else {
+              event.preventDefault();
+              $(".error-message").fadeIn(2000);
+          }
         }
 
         vm.exportQuestions = function() {
@@ -62,6 +70,13 @@
           if ( file ){
               reader.readAsText(file);
           }
+        }
+        vm.validate = function(){
+            var emptyName = _.filter($(".validate"), function(item){
+                return item.value == "";
+            })
+
+            return ! emptyName.length > 0
         }
     }
 

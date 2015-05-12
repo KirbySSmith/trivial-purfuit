@@ -30,17 +30,16 @@
         }
 
         vm.save = function(){
-            var test = vm.validate();
             if ( vm.validate() ){
                 Player.setPlayers(vm.tempPlayers);
             } else {
                 event.preventDefault();
-                $(".error-message").fadeIn(2000).fadeOut(1000);
+                $(".error-message").fadeIn(2000);
             }
         }
 
         vm.validate = function(){
-            var emptyName = _.filter($(".player-name"), function(item){
+            var emptyName = _.filter($(".validate"), function(item){
                 return item.value == "";
             })
 
