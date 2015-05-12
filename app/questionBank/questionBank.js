@@ -51,9 +51,7 @@
         QuestionBank.getQuestionforCategory = function(id){
             if ( this.gameQuestionsByCategory[id] ){
                 var question = this.pickRandomQuestion(this.gameQuestionsByCategory[id]);
-                //TODO
-                //Disable question removal until we have tons of questions
-                //this.removeQuestionFromGame(question);
+                this.removeQuestionFromGame(question);
                 return question;
             } else {
                 return "No questions available for category";

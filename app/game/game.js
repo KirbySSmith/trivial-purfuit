@@ -50,8 +50,9 @@
 
         function takeTurn(result) {
             vm.disableRoll = true;
-            vm.players[vm.currentPlayerIndex].numberOfMoves = result;
-            vm.players[vm.currentPlayerIndex].move(promptForDirection, nextTurn, vm.showRollAgain);
+            vm.players[vm.currentPlayerIndex].numberOfMoves = 6;
+            //vm.players[vm.currentPlayerIndex].numberOfMoves = result;
+            vm.players[vm.currentPlayerIndex].move(promptForDirection, nextTurn, vm.showQuestion, vm.showRollAgain);
         }
 
         var nextTurn = function (){
@@ -71,7 +72,7 @@
             vm.disableDirectionRight = true;
             vm.disableDirectionDown = true;
             vm.disableDirectionLeft = true;
-            vm.players[vm.currentPlayerIndex].movePiece(promptForDirection, nextTurn, vm.showRollAgain, direction);
+            vm.players[vm.currentPlayerIndex].movePiece(promptForDirection, nextTurn, vm.showQuestion, vm.showRollAgain, direction);
         };
 
         vm.showAnswerClick = function(){
@@ -106,6 +107,7 @@
             var modal  =  $('#winModal'),
                 player = vm.players[vm.currentPlayerIndex];
 
+            $('#questionModal').modal('hide');
             modal.find(".header-name").text(player.name);
             modal.modal();
         };
@@ -142,6 +144,38 @@
         vm.rollDice = function(){
             CustomD6.roll();
         };
+
+        vm.continueToFinalQuestion = function(categoryId){
+            var modal =  $('#chooseFinalCategory');
+            modal.modal('hide');
+            vm.showQuestion(categoryId);
+        }
+
+        vm.showQuestion = function(categoryId){
+            var that = this,
+                categoryId = categoryId || vm.players[vm.currentPlayerIndex].boardLocation.categoryId,
+                catTitle = $('#category-title'),
+                question = QuestionBank.getQuestionforCategory(categoryId),
+                category = Category.find(categoryId);
+
+            if ( question.text == undefined ){
+              $('.question').text("Uh oh. out of questions!");
+            }else{
+              $('.question').text(question.text);
+              $('.answer').text(question.answer);
+            }
+
+            catTitle.className = '';
+            catTitle.text(category.title);
+            catTitle.addClass(category);
+
+            var modal =  $('#questionModal');
+            var modal =  $('#questionModal');
+
+            modal.addClass('rollAgain');
+            modal.removeClass('continue');
+            modal.modal('show');
+        }
     }
 
 })();
