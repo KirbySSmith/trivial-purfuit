@@ -8,25 +8,25 @@
         <div>How many players would you like to have in this game?</div>
         <div class="radio">
             <label>
-                <input type="radio" name="optionsRadios" ng-click="vm.updateCount(1)" id="optionsRadios1" value="option1" checked>
-                1 Players
+                <input type="radio" name="optionsRadios" ng-click="vm.updateCount(1)" id="optionsRadios1" value="option1" ng-checked="vm.tempPlayers.length==1">
+                1 Player
             </label>
         </div>
         <div class="radio">
             <label>
-                <input type="radio" ng-click="vm.updateCount(2)" name="optionsRadios" id="optionsRadios2" value="option2">
+                <input type="radio" ng-click="vm.updateCount(2)" name="optionsRadios" id="optionsRadios2" value="option2" ng-checked="vm.tempPlayers.length==2">
                2 Players
             </label>
         </div>
         <div class="radio">
             <label>
-                <input type="radio" name="optionsRadios" ng-click="vm.updateCount(3)" id="optionsRadios3" value="option3">
+                <input type="radio" name="optionsRadios" ng-click="vm.updateCount(3)" id="optionsRadios3" value="option3" ng-checked="vm.tempPlayers.length==3">
                 3 Players
             </label>
         </div>
         <div class="radio">
             <label>
-                <input type="radio" name="optionsRadios" ng-click="vm.updateCount(4)" id="optionsRadios4" value="option4">
+                <input type="radio" name="optionsRadios" ng-click="vm.updateCount(4)" id="optionsRadios4" value="option4" ng-checked="vm.tempPlayers.length==4">
                4 Players
             </label>
         </div>
