@@ -30,7 +30,21 @@
         }
 
         vm.save = function(){
-            Player.setPlayers(vm.tempPlayers);
+            var test = vm.validate();
+            if ( vm.validate() ){
+                Player.setPlayers(vm.tempPlayers);
+            } else {
+                event.preventDefault();
+                $(".error-message").fadeIn(2000).fadeOut(1000);
+            }
+        }
+
+        vm.validate = function(){
+            var emptyName = _.filter($(".player-name"), function(item){
+                return item.value == "";
+            })
+
+            return ! emptyName.length > 0
         }
     }
 })();

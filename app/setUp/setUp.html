@@ -34,6 +34,7 @@
 
         <h3>Player Names</h3>
         <div>Assign each player a name.</div>
+        <div class="error-message" style="display: none; color: red">Please Make Sure All Players Have Names!</div>
         <div class="col-xs-12 col-sm-8 col-md-6 player-inputs" ng-repeat="player in vm.tempPlayers">
           <div>Player {{ $index + 1}}</div>
             <input type="text" class="player-name form-control" placeholder="Player Name" ng-model="player.name"/>
@@ -42,7 +43,7 @@
         </div>
 
         <div class="col-xs-12 buttons">
-            <button class="btn btn-lg btn-primary" ng-click="vm.save()"> Save Changes </button>
+          <a href="#/game/"><button class="btn btn-lg btn-primary" ng-click="vm.save()"> Play Game </button></a>
         </div>
     </div>
 </div>
