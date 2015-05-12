@@ -1,12 +1,12 @@
 <div id="content" class="container">
     <div id="game-view" data-ng-controller="Game as vm">
     <!-- Win Modal -->
-    <div class="modal fade" id="winModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="winModal" tabindex="-1" data-keyboard="false" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header win">
-                    Congratulations
-                    <span class="player-name"></span>
+                    <span class="header-title"> Congratulations</span>
+                    <span class="header-name"></span>
                 </div>
                 <div class="modal-body">
                     Thank you for playing Trivial Purfuit!
@@ -20,7 +20,7 @@
     </div>
 
     <!-- Question Modal -->
-    <div class="modal fade" id="questionModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="questionModal" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">

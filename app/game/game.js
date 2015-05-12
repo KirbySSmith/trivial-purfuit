@@ -106,11 +106,8 @@
             var modal  =  $('#winModal'),
                 player = vm.players[vm.currentPlayerIndex];
 
-            modal.find(".player-name").text(player.name);
-            modal.modal({
-                backdrop: 'static',
-                keyboard: false
-            });
+            modal.find(".header-name").text(player.name);
+            modal.modal();
         };
 
         vm.continueClick = function(){
