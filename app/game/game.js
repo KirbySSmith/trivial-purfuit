@@ -11,11 +11,17 @@
     function Game($location, Player, Question, Category, BoardSpace, Enum, QuestionBank){
         var vm = this;
 
+        vm.players = Player.all();
+        if ( vm.players.length == 0 ){
+            $location.path( "setup/" )
+            return;
+        }
+
         QuestionBank.prepareForGame();
         Category.loadWithCallback(function(response){ vm.categories = response; });
 
         vm.boardSpaces = [];
-        vm.players = Player.all();
+
         //vm.players.push(new Player(1, "Kirby", "#99cc99"));
         //vm.players.push(new Player(2, "Tommy", "#cc99cc"));
         //vm.players.push(new Player(3, "Frances", "#ffdb99"));
