@@ -73,7 +73,7 @@
           if ( that.boardLocation.rollAgain ){
             that.rollAgain(rollAgain);
           } else if ( that.boardLocation.centerSpace ){
-            that.landedOnCenter();
+            that.landedOnCenter(nextTurn);
           } else {
             that.showQuestion();
           }
@@ -91,11 +91,14 @@
       rollAgain();
     }
 
-    Player.prototype.landedOnCenter = function(){
+    Player.prototype.landedOnCenter = function(nextTurn){
       if ( this.allCakeCollected() ){
           this.showFinalQuestion();
       } else {
           //what do we do if on center square and not all squares collected?
+          this.numberOfMoves = 0;
+          this.previousSpace = null;
+          nextTurn();
       }
     }
 
