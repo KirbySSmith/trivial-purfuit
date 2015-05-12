@@ -193,16 +193,16 @@
     Player.prototype.collectCategory = function(){
       switch(this.boardLocation.categoryId){
         case 1:
-          this.categoryOneCollected = true;
+          this.categoryOneCollected = Category.find(1);
           break;
         case 2:
-          this.categoryTwoCollected = true;
+          this.categoryTwoCollected = Category.find(2);
           break;
         case 3:
-          this.categoryThreeCollected = true;
+          this.categoryThreeCollected = Category.find(3);
           break;
         case 4:
-          this.categoryFourCollected = true;
+          this.categoryFourCollected = Category.find(4);
           break;
       }
     };
