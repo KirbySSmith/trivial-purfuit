@@ -15,7 +15,7 @@ source http://stackoverflow.com/questions/16268606/responsive-dropdown-navbar-wi
         </div>
         <div id="top-navbar" class="collapse navbar-collapse navbar-responsive-collapse" collapse="navCollapsed">
             <ul class="nav navbar-nav">
-                <li ng-class="{ active: vm.isActive('/setup')}">
+                <li ng-class="{ active: vm.isActive('/setup') || vm.isActive('/game')}">
                     <a href="#/setup">Play Game</a>
                 </li>
                 <li ng-class="{ active: vm.isActive('/manage-questions')}">
