@@ -237,6 +237,11 @@
   box-shadow:  10px 10px 5px #888888;
 }
 
+.gameSpace.centerSpace{
+  background: #cccccc center center no-repeat;
+  background-size: cover;
+  background-image: url(../images/thirteen-stars.jpg);
+}
 .categoryBG{
   position: absolute;
   height: 31%;
@@ -249,25 +254,25 @@
   top:0;
   left:0;
   margin: 13% 6% 6% 13%;
-  background-image: url(../img/portfolio/places.jpg);
+  background-image: url(../img/portfolio/placesText.jpg);
 }
 .categoryBGTwo{
   top:0;
   left:50%;
   margin: 13% 13% 6% 6%;
-  background-image: url(../img/portfolio/people.jpg);
+  background-image: url(../img/portfolio/peopleText.jpg);
 }
 .categoryBGThree{
   top:50%;
   left:0;
   margin: 6% 6% 13% 13%;
-  background-image: url(../img/portfolio/events.jpg);
+  background-image: url(../img/portfolio/eventsText.jpg);
 }
 .categoryBGFour{
   top:50%;
   left:50%;
   margin: 6% 13% 13% 6%;
-  background-image: url(../img/portfolio/holiday.jpg);
+  background-image: url(../img/portfolio/holidayText.jpg);
 }
 .gameSpace{
   background: ghostwhite;
@@ -277,6 +282,9 @@
   position: absolute;
 }
 
+.headQuarters{
+  text-align: center;
+}
 
 .border-top{
     border-top: solid #6f6fff 1px;;
@@ -408,7 +416,8 @@
 #gameBoard .rollAgain{
   background: #bfbfbf center center no-repeat;
   background-image: url(../images/diceRoll/dices-6.gif);
-  background-size: 25%;
+  background-size: 30%;
+  text-align: center;
 
 }
 
