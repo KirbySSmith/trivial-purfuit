@@ -1,5 +1,23 @@
 <div id="content" class="container">
     <div id="game-view" data-ng-controller="Game as vm">
+    <!-- Choose Final Category -->
+    <div class="modal fade" id="chooseFinalCategory" tabindex="-1" data-keyboard="false" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="header-title"> Choose Final Category </h1>
+                </div>
+                <div class="modal-body">
+                    <div class="sub-text"> Players other than {{vm.players[vm.currentPlayerIndex].name}} should choose the final category. </div>
+                    <select class="form-control" ng-init="vm.finalCategory = 1" ng-model="vm.finalCategory" ng-options="category.id as category.title for category in vm.categories"></select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="vm.continueToFinalQuestion(vm.finalCategory)"> Continue </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Win Modal -->
     <div class="modal fade" id="winModal" tabindex="-1" data-keyboard="false" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">

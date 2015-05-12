@@ -1,13 +1,13 @@
 [
   {
     "id": 1,
-    "title": "Events",
-    "color": "#ffffff"
+    "title": "People",
+    "color": "#ff2600"
   },
   {
     "id": 2,
-    "title": "People",
-    "color": "#ff2600"
+    "title": "Events",
+    "color": "#ffffff"
   },
   {
     "id": 3,
