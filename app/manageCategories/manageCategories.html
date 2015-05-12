@@ -3,7 +3,9 @@
   Manage Categories
 </h1>
 
-    <div id="manage-categories" data-ng-controller="ManageCategories as vm">
+ <div id="manage-categories" data-ng-controller="ManageCategories as vm">
+  <div class="success-message" style="display: none; color: green">Success!</div>
+  <div class="error-message" style="display: none; color: red">Please Make Sure All Players Have Names!</div>
   <div class="table-wrapper">
   <table>
     <tr>
@@ -16,7 +18,7 @@
         <input id="id" type="hidden" class="form-control" ng-model="category.id">
       </td>
       <td>
-        <input type="text" class="form-control" placeholder="Please enter a category title" ng-model="category.title">
+        <input type="text" class="validate form-control" placeholder="Please enter a category title" ng-model="category.title">
       </td>
       <td>
         <input type="color" class="form-control" ng-model="category.color">
@@ -28,6 +30,6 @@
   </div>
 </div>
 
-        </div>
+</div>
 
 </div>

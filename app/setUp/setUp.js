@@ -9,7 +9,7 @@
 
     function SetUp(Player){
         var vm            = this,
-            defaultColors = ["#ec452f", "#ffffff", "#0433ff", "#00f900"];
+            defaultColors = ["#ec452f", "#1d1d1d", "#021ea8", "#59ba0b"];
 
         if ( Player.playerList.length > 0 ){
             vm.tempPlayers = angular.copy(Player.all());
@@ -30,7 +30,20 @@
         }
 
         vm.save = function(){
-            Player.setPlayers(vm.tempPlayers);
+            if ( vm.validate() ){
+                Player.setPlayers(vm.tempPlayers);
+            } else {
+                event.preventDefault();
+                $(".error-message").fadeIn(2000);
+            }
+        }
+
+        vm.validate = function(){
+            var emptyName = _.filter($(".validate"), function(item){
+                return item.value == "";
+            })
+
+            return ! emptyName.length > 0
         }
     }
 })();
