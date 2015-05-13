@@ -237,6 +237,10 @@
   box-shadow:  10px 10px 5px #888888;
 }
 
+input.numberOfMoves{
+  width: 3em;
+}
+
 .gameSpace.centerSpace{
   background: #cccccc center center no-repeat;
   background-size: cover;

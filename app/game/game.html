@@ -115,7 +115,8 @@
             moves
             <div class="clearfix "></div>
             <span id="moveCountDisplay">
-             {{vm.players[vm.currentPlayerIndex].numberOfMoves}}
+                <input ng-show="vm.demo" class="numberOfMoves" type="number" ng-model="vm.players[vm.currentPlayerIndex].numberOfMoves"/>
+                <span ng-click="vm.demoMode()" ng-hide="vm.demo">{{vm.players[vm.currentPlayerIndex].numberOfMoves}}</span>
             </span>
           </td>
           <td>

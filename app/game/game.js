@@ -34,6 +34,7 @@
         vm.disableDirectionLeft = true;
         vm.disableRoll = false;
         vm.answerHidden = true;
+        vm.demo = false;
 
         CustomD6.dice(2, takeTurn);
         activate();
@@ -149,7 +150,7 @@
             var modal =  $('#chooseFinalCategory');
             modal.modal('hide');
             vm.showQuestion(categoryId);
-        }
+        };
 
         vm.showQuestion = function(categoryId){
             var that = this,
@@ -170,12 +171,15 @@
             catTitle.addClass(category);
 
             var modal =  $('#questionModal');
-            var modal =  $('#questionModal');
 
             modal.addClass('rollAgain');
             modal.removeClass('continue');
             modal.modal('show');
         }
+        vm.demoMode = function(){
+            vm.demo = true;
+        };
+
     }
 
 })();
