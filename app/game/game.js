@@ -51,8 +51,7 @@
 
         function takeTurn(result) {
             vm.disableRoll = true;
-            vm.players[vm.currentPlayerIndex].numberOfMoves = 6;
-            //vm.players[vm.currentPlayerIndex].numberOfMoves = result;
+            vm.players[vm.currentPlayerIndex].numberOfMoves = result;
             vm.players[vm.currentPlayerIndex].move(promptForDirection, nextTurn, vm.showQuestion, vm.showRollAgain);
         }
 
