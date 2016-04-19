@@ -1,18 +1,28 @@
+<!--
+Fixed version of bootstrap topnav menu for angular
+source http://stackoverflow.com/questions/16268606/responsive-dropdown-navbar-with-angular-ui-bootstrap-done-in-the-correct-angula
+-->
 
     <div class="container">
         <div class="navbar-header">
-            <button class="navbar-toggle collapsed" aria-controls="navbar" aria-expanded="false" data-target="#navbar" data-toggle="collapse" type="button">
+            <button class="navbar-toggle collapsed" ng-init="navCollapsed = true" ng-click="navCollapsed = !navCollapsed" aria-controls="navbar" type="button">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="#">Trivial Purfuit</a>
+            <a class="navbar-brand" href="#/">Trivial Purfuit</a>
         </div>
-        <div id="navbar" class="collapse navbar-collapse">
+        <div id="top-navbar" class="collapse navbar-collapse navbar-responsive-collapse" collapse="navCollapsed">
             <ul class="nav navbar-nav">
-                <li ng-class="{ active: vm.isActive('/conversation')}">
-                    <a href="#/mainMenu">Main Menu</a>
+                <li ng-class="{ active: vm.isActive('/setup') || vm.isActive('/game')}">
+                    <a href="#/setup">Play Game</a>
+                </li>
+                <li ng-class="{ active: vm.isActive('/manage-questions')}">
+                    <a href="#/manage-questions">Manage Questions</a>
+                </li>
+                <li ng-class="{ active: vm.isActive('/manage-categories')}">
+                    <a href="#/manage-categories">Manage Categories</a>
                 </li>
             </ul>
         </div>

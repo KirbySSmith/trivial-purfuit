@@ -1,0 +1,104 @@
+[
+  {
+    "id": 1,
+    "text": "When was the Declaration of Independence adopted by the Continental Congress?",
+    "answer": "July 4, 1776",
+    "categoryId": 1
+  },
+  {
+    "id": 2,
+    "text": "Who was the oldest signer of the Declaration of Independence?",
+    "answer": "Benjamin Franklin",
+    "categoryId": 2
+  },
+  {
+    "id": 3,
+    "text": "Where is the Declaration kept today?",
+    "answer": "National Archives",
+    "categoryId": 3
+  },
+  {
+    "id": 4,
+    "text": "Which president was born on the 4th of July?",
+    "answer": "Calvin Coolidge",
+    "categoryId": 4
+  },
+  {
+    "id": 5,
+    "text": "Initially how did New York vote on Independence?",
+    "answer": "They abstained",
+    "categoryId": 1
+  },
+  {
+    "id": 6,
+    "text": "Who was the youngest signer of the Declaration of Independence?",
+    "answer": "Edward Rutledge",
+    "categoryId": 2
+  },
+  {
+    "id": 7,
+    "text": "Where were the meetings of the Second Continental Congress held during the writing of the Declaration?",
+    "answer": "Philadelphia",
+    "categoryId": 3
+  },
+  {
+    "id": 8,
+    "text": "When did the Fourth of July become a legal federal holiday?",
+    "answer": "1938",
+    "categoryId": 4
+  },
+  {
+    "id": 9,
+    "text": "When was the first public reading of the Declaration is in Philadelphia?",
+    "answer": "July 8",
+    "categoryId": 1
+  },
+  {
+    "id": 10,
+    "text": "From which English philosopher did the Declaration committe get the ideas for the Declaration?",
+    "answer": "John Locke",
+    "categoryId": 2
+  },
+  {
+    "id": 11,
+    "text": "Where did Thomas Jefferson write the Declaration?",
+    "answer": "The Declaration House",
+    "categoryId": 3
+  },
+  {
+    "id": 12,
+    "text": "Which 3 presidents died on the 4th of July?",
+    "answer": "John Adams, Thomas Jefferson and James Monroe.",
+    "categoryId": 4
+  },
+  {
+    "id": 13,
+    "text": "John Adams would think the country is celebrating Independence Day on the wrong date. Which day did he want?",
+    "answer": "July 2, the date the Second Continental Congress voted in Philadelphia to declare independence from Britain",
+    "categoryId": 4
+  },
+  {
+    "id": 14,
+    "text": "When did Thomas Jefferson, John Adams, Benjamin Franklin, Roger Sherman, and Robert R. Livingston appoint to a committee to draft a declaration of independence?",
+    "answer": "June 11",
+    "categoryId": 1
+  },
+  {
+    "id": 15,
+    "text": "Who was the president of the Continental Congress?",
+    "answer": "John Hancock",
+    "categoryId": 2
+  },
+  {
+    "id": 16,
+    "text": "True or False. None of the Signers of the Declaration where born in America. ",
+    "answer": "True",
+    "categoryId": 3
+  },
+  {
+    "id": 17,
+    "text": "How many people signed the Declaration of Independence on July Fourth?",
+    "answer": "Two",
+    "categoryId": 4
+  }
+]

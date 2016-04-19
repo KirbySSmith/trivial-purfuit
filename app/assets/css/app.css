@@ -193,36 +193,354 @@
 
 @-webkit-keyframes rotation {
   from {
-    -webkit-transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
   }
   to {
-    -webkit-transform: rotate(359deg);
+	-webkit-transform: rotate(359deg);
   }
 }
 
 @-moz-keyframes rotation {
   from {
-    -moz-transform: rotate(0deg);
+	-moz-transform: rotate(0deg);
   }
   to {
-    -moz-transform: rotate(359deg);
+	-moz-transform: rotate(359deg);
   }
 }
 
 @-o-keyframes rotation {
   from {
-    -o-transform: rotate(0deg);
+	-o-transform: rotate(0deg);
   }
   to {
-    -o-transform: rotate(359deg);
+	-o-transform: rotate(359deg);
   }
 }
 
 @keyframes rotation {
   from {
-    transform: rotate(0deg);
+	transform: rotate(0deg);
   }
   to {
-    transform: rotate(359deg);
+	transform: rotate(359deg);
   }
+}
+#gameBoardWrapper{
+  padding: 5%;
+}
+#gameBoard{
+  float: left;
+  width: 100%;
+  padding-top: 100%;
+  position: relative;
+  box-shadow:  10px 10px 5px #888888;
+}
+
+input.numberOfMoves{
+  width: 3em;
+}
+
+.gameSpace.centerSpace{
+  background: #cccccc center center no-repeat;
+  background-size: cover;
+  background-image: url(../images/thirteen-stars.jpg);
+}
+.categoryBG{
+  position: absolute;
+  height: 31%;
+  width: 31%;
+  margin: 10%;
+  background: #cccccc center center no-repeat;
+  background-size: cover;
+}
+.categoryBGOne{
+  top:0;
+  left:0;
+  margin: 13% 6% 6% 13%;
+  background-image: url(../img/portfolio/placesText.jpg);
+}
+.categoryBGTwo{
+  top:0;
+  left:50%;
+  margin: 13% 13% 6% 6%;
+  background-image: url(../img/portfolio/peopleText.jpg);
+}
+.categoryBGThree{
+  top:50%;
+  left:0;
+  margin: 6% 6% 13% 13%;
+  background-image: url(../img/portfolio/eventsText.jpg);
+}
+.categoryBGFour{
+  top:50%;
+  left:50%;
+  margin: 6% 13% 13% 6%;
+  background-image: url(../img/portfolio/holidayText.jpg);
+}
+.gameSpace{
+  background: ghostwhite;
+  border: solid darkblue 2px;
+  height: 14.295%;
+  width: 14.295%;
+  position: absolute;
+}
+
+.headQuarters{
+  text-align: center;
+}
+
+.border-top{
+    border-top: solid #6f6fff 1px;;
+}
+.border-left{
+    border-left: solid #6f6fff 1px;;
+}
+
+/*Game Piece Style*/
+.gamePiece{
+    position: absolute;
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    height: 14.295%;
+    width: 14.295%;
+
+}
+#questionModal .ng-hide-add.ng-hide-add-active, #questionModal .ng-hide-remove.ng-hide-remove-active {
+  /* this is required as of 1.3x to properly
+     apply all styling in a show/hide animation */
+  -webkit-transition: all linear 2.5s;
+  transition: all linear 2.5s;
+}
+#questionModal .ng-hide {
+  max-height: 0;
+  opacity: 0;
+}
+.currentPlayer.gameToken{
+  z-index: 120;
+  box-shadow:  0 0 9px 1px #00c6ff;
+}
+.gameToken{
+  height: 45.5%;
+  width: 45.5%;
+  border-width:4px;
+  border-style:solid;
+  box-shadow:  1px 1px 1px #a1a1a1;
+  z-index: 119;
+}
+
+#player1.gameToken{
+  margin-top: 3%;
+  margin-left: 3%;
+  /*background-color: #99cc99;*/
+}
+#player1.gameToken, #player1.gameToken td{
+	border-color: #008000;
+}
+#player2.gameToken{
+  margin-top: 3%;
+  margin-left: 50.5%;
+  background-color: #cc99cc;
+}
+#player2.gameToken, #player2.gameToken td{
+	border-color: #800080;
+}
+#player3.gameToken{
+  margin-top: 50.5%;
+  margin-left: 3%;
+  background-color: #ffdb99;
+}
+#player3.gameToken, #player3.gameToken td{
+	border-color: #FFA500;
+}
+#player4.gameToken{
+  margin-top: 50.5%;
+  margin-left: 50.5%;
+  background-color: #ffff7f;
+}
+#player4.gameToken, #player4.gameToken td{
+	border-color: #cccc00;
+}
+.gamePieceCategory{
+  border: solid #000000 2px;
+  width: 50%;
+}
+
+#currentPlayerInfo{
+  padding-top: 50%;
+  height: 50%;
+  font-size: 2em;
+}
+
+#gamePieceControls table{
+  margin: auto;
+}
+#gamePieceControls td{
+  text-align: center;
+  padding: 2px;
+}
+#gamePieceControls button{
+  box-shadow:  0 0 9px 1px #00c6ff;
+}
+#gamePieceControls button:disabled{
+  box-shadow: none;
+}
+#diceall{
+  text-align: center;
+  padding: 0;
+  padding-top:15px;
+}
+#dicebutton{
+  box-shadow:  0 0 9px 1px #00c6ff;
+  margin: 4px;
+}
+#dicebutton:disabled{
+  box-shadow: none;
+}
+
+@media screen and (max-width: 768px)  {
+  .gameToken{
+	border-width:2px;
+  }
+  .gamePieceCategory{
+	border:none;
+  }
+  #currentPlayerInfo{
+    padding-top: 0;
+    height: 1.4em;
+  }
+}
+
+
+/*gamepieces*/
+
+/*rollAgain*/
+#gameBoard .rollAgain{
+  background: #bfbfbf center center no-repeat;
+  background-image: url(../images/diceRoll/dices-6.gif);
+  background-size: 30%;
+  text-align: center;
+
+}
+
+/*people*/
+#gameBoard .categoryOne{
+    background: rgb(139,0,0);
+    color: darkgrey;
+}
+/*events*/
+#gameBoard .categoryTwo{
+    background: rgb(250,250,240);
+    color: black;
+}
+/*places*/
+#gameBoard .categoryThree{
+    background: rgb(0,0,139);
+    color: darkgrey;
+}
+/*holiday*/
+#gameBoard .categoryFour{
+    background: rgb(0,100,0);
+    color: darkgrey;
+}
+
+/* Homepage styling */
+.welcome {
+  text-align: center;
+  font-size: 200%;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  -webkit-text-shadow: 2px 2px #000000;
+  text-shadow: 2px 2px #000000;
+  text-shadow: 2px 2px rgba(0, 0, 0, 0.15);
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #F58A00;
+  padding: 0;
+}
+
+.options {
+  text-align: center;
+}
+#mainMenu-view{
+  height: 100%;
+}
+
+/* Start: Question Styling */
+.question-status {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.question {
+    font-size: 20px;
+}
+
+#category-title {
+    font-size: 40px;
+}
+
+.cat-places {
+    color: darkblue;
+}
+
+.cat-people {
+    color: darkred;
+}
+
+.cat-holiday {
+    color: darkgreen;
+}
+
+
+#questionModal.continue  #rightAnswerBtn,
+#questionModal.continue  .question-status,
+#questionModal.continue  #wrongAnswerBtn,
+#questionModal.continue  #showAnswerBtn
+{
+    display: none;
+}
+
+#questionModal.continue  #continueBtn{
+    display: inline-block;
+}
+
+
+#questionModal.rollAgain  #rightAnswerBtn,
+#questionModal.rollAgain  .question-status,
+#questionModal.rollAgain  #wrongAnswerBtn{
+    display: inline-block;
+}
+
+#questionModal.rollAgain  #continueBtn{
+    display: none;
+}
+
+/* End: Question Styling */
+
+/*Page Setup*/
+.player-inputs {
+    padding-left: 0;
+    margin-top: 10px;
+}
+.player-name {
+    width: 75%;
+    float: left;
+}
+
+.player-color {
+    width: 25%;
+}
+
+#setUp .buttons {
+    margin-top: 30px;
+    padding-left: 0;
+}
+
+/* Win Modal */
+.win.modal-header {
+  font-size: 30px;
+  font-weight: bold;
 }

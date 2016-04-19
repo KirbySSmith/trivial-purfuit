@@ -1,0 +1,139 @@
+<div id="content" class="container">
+    <div id="game-view" data-ng-controller="Game as vm">
+    <!-- Choose Final Category -->
+    <div class="modal fade" id="chooseFinalCategory" tabindex="-1" data-keyboard="false" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                  <h1 class="header-title"> Choose Final Category </h1>
+                </div>
+                <div class="modal-body">
+                    <div class="sub-text"> Players other than {{vm.players[vm.currentPlayerIndex].name}} should choose the final category. </div>
+                    <select class="form-control" ng-init="vm.finalCategory = 1" ng-model="vm.finalCategory" ng-options="category.id as category.title for category in vm.categories"></select>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="vm.continueToFinalQuestion(vm.finalCategory)"> Continue </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Win Modal -->
+    <div class="modal fade" id="winModal" tabindex="-1" data-keyboard="false" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header win">
+                    <span class="header-title"> Congratulations</span>
+                    <span class="header-name"></span>
+                </div>
+                <div class="modal-body">
+                    Thank you for playing Trivial Purfuit!
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" ng-click="vm.resetGame()"> Play Again </button>
+                    <a href="#/setup/" ng-click="vm.goToSetup()"><button type="button" class="btn btn-default"> Go To Setup </button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Question Modal -->
+    <div class="modal fade" id="questionModal" data-keyboard="false" data-backdrop="static" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 id="category-title" class="cat-places">Places</h4>
+                </div>
+                <div class="modal-body question">
+                </div>
+
+                <div ng-show="vm.answerHidden" class="modal-footer">
+                    <button id="continueBtn" type="button" class="btn btn-default" ng-click="vm.continueClick()">Continue</button>
+                    <button id="showAnswerBtn" type="button" class="btn btn-default" ng-click="vm.showAnswerClick()" >Show Answer</button>
+                </div>
+
+                    <div class="modal-body answer"  ng-hide="vm.answerHidden">
+                    </div>
+                    <div class="modal-footer" ng-hide="vm.answerHidden">
+                        <div class="question-status">
+                            How did you do?
+                        </div>
+                        <button id="rightAnswerBtn" type="button" class="btn btn-default" ng-click="vm.rightAnswerClick()" >Right Answer</button>
+                        <button id="wrongAnswerBtn" type="button" class="btn btn-default" ng-click="vm.wrongAnswerClick()" data-dismiss="modal">Wrong Answer</button>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+  <div id="gameBoardWrapper" class="col-sm-9 col-xs-12">
+
+    <div id="gameBoard">
+        <div class="categoryBG categoryBGOne"></div>
+        <div class="categoryBG categoryBGTwo"></div>
+        <div class="categoryBG categoryBGThree"></div>
+        <div class="categoryBG categoryBGFour"></div>
+      <div ng-repeat="boardSpaceInstance in vm.boardSpaces" class="gameSpace" ng-class="{ 'headquarters': boardSpaceInstance.headquarters, 'centerSpace': boardSpaceInstance.centerSpace, 'rollAgain':boardSpaceInstance.rollAgain,'categoryFour':boardSpaceInstance.categoryId == 4, 'categoryThree':boardSpaceInstance.categoryId == 3,'categoryTwo':boardSpaceInstance.categoryId == 2,'categoryOne':boardSpaceInstance.categoryId == 1, 'border-left': !boardSpaceInstance.borderLeft, 'border-top': !boardSpaceInstance.borderTop}"
+           id="boardSpace{{boardSpaceInstance.id}}" ng-style="{top: boardSpaceInstance.top+'%', left: boardSpaceInstance.left+'%'}">
+          <div class="headQuarters" ng-if="boardSpaceInstance.headquarters">
+              <span class="hidden-sm hidden-xs" ng-if="boardSpaceInstance.categoryId==1 && boardSpaceInstance.headquarters ">People</span>
+              <span class="hidden-sm hidden-xs" ng-if="boardSpaceInstance.categoryId==2 && boardSpaceInstance.headquarters">Events</span>
+              <span class="hidden-sm hidden-xs" ng-if="boardSpaceInstance.categoryId==3 && boardSpaceInstance.headquarters">Places</span>
+              <span class="hidden-sm hidden-xs" ng-if="boardSpaceInstance.categoryId==4 && boardSpaceInstance.headquarters">Independence Day</span>
+              HQ
+          </div>
+          <span class="hidden-sm hidden-xs " ng-if="boardSpaceInstance.rollAgain">Roll Again</span>
+      </div>
+      <purfuit-game-piece ng-repeat="player in vm.players" player="player" ></purfuit-game-piece>
+    </div>
+    <div class="clearfix "></div>
+  </div>
+  <div class="col-sm-3 col-xs-12">
+
+    <div id="currentPlayerInfo" class="col-xs-12" ng-style="{'background-color': vm.players[vm.currentPlayerIndex].bgColor()}">
+      {{vm.players[vm.currentPlayerIndex].name}}
+    </div>
+    <div id="diceall" class="col-sm-12 col-xs-4 ">
+        <div id="dice_diceGroup_0" class="diceGroup"><img id="dice1" class="die" src="assets/images/diceRoll/die-6.gif"><img id="dice2" class="die" src="assets/images/diceRoll/die-6.gif"> <span id="sidebar_0" class="sidebar"></span></div>
+        <button type="button" id="dicebutton" ng-disabled="vm.disableRoll" ng-click="vm.rollDice()"  >Roll Dice</button>
+    </div>
+    <div id="gamePieceControls" class="col-sm-12 col-xs-8 ">
+      <table>
+        <tr>
+          <td colspan="3">
+            <button ng-disabled="vm.disableDirectionUp" ng-click="vm.directionButtonClick(1)" type="button" class="btn btn-default" aria-label="Move Up">
+              <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <button ng-disabled="vm.disableDirectionLeft" ng-click="vm.directionButtonClick(4)" type="button" class="btn btn-default" aria-label="Move Left">
+              <span class="glyphicon glyphicon-arrow-left" aria-hidden="true"></span>
+            </button>
+          </td>
+          <td>
+            moves
+            <div class="clearfix "></div>
+            <span id="moveCountDisplay">
+                <input ng-show="vm.demo" class="numberOfMoves" type="number" ng-model="vm.players[vm.currentPlayerIndex].numberOfMoves"/>
+                <span ng-click="vm.demoMode()" ng-hide="vm.demo">{{vm.players[vm.currentPlayerIndex].numberOfMoves}}</span>
+            </span>
+          </td>
+          <td>
+            <button ng-disabled="vm.disableDirectionRight" ng-click="vm.directionButtonClick(2)" type="button" class="btn btn-default" aria-label="Move Right">
+              <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+            </button>
+          </td>
+        </tr>
+        <tr>
+          <td colspan="3">
+            <button ng-disabled="vm.disableDirectionDown" ng-click="vm.directionButtonClick(3)" type="button" class="btn btn-default" aria-label="Move Down">
+              <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>
+</div>

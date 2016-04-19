@@ -8,4 +8,5 @@ tmp
 *.iml
 target/
 wrapper/
-
+*.swp
+*.swo

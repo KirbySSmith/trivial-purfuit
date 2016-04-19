@@ -1,0 +1,50 @@
+<div id="content" class="container" data-ng-controller="SetUp as vm">
+    <div id="setUp">
+        <h1>
+            Game Set Up
+        </h1>
+
+        <h3>Number of Players</h3>
+        <div>How many players would you like to have in this game?</div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" ng-click="vm.updateCount(1)" id="optionsRadios1" value="option1" ng-checked="vm.tempPlayers.length==1">
+                1 Player
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" ng-click="vm.updateCount(2)" name="optionsRadios" id="optionsRadios2" value="option2" ng-checked="vm.tempPlayers.length==2">
+               2 Players
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" ng-click="vm.updateCount(3)" id="optionsRadios3" value="option3" ng-checked="vm.tempPlayers.length==3">
+                3 Players
+            </label>
+        </div>
+        <div class="radio">
+            <label>
+                <input type="radio" name="optionsRadios" ng-click="vm.updateCount(4)" id="optionsRadios4" value="option4" ng-checked="vm.tempPlayers.length==4">
+               4 Players
+            </label>
+        </div>
+
+
+        <h3>Player Names</h3>
+        <div>Assign each player a name.</div>
+        <div class="success-message" style="display: none; color: green">Success!</div>
+        <div class="error-message" style="display: none; color: red">Please Make Sure All Players Have Names!</div>
+        <div class="col-xs-12 col-sm-8 col-md-6 player-inputs" ng-repeat="player in vm.tempPlayers">
+          <div>Player {{ $index + 1}}</div>
+            <input type="text" class="validate player-name form-control" placeholder="Player Name" ng-model="player.name"/>
+
+            <input type="color" class="player-color form-control" ng-model="player.color">
+        </div>
+
+        <div class="col-xs-12 buttons">
+          <a href="#/game/"><button class="btn btn-lg btn-primary" ng-click="vm.save()"> Play Game </button></a>
+        </div>
+    </div>
+</div>

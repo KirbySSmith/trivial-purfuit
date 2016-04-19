@@ -1,0 +1,12 @@
+<div class="gamePiece" ng-style="{top: player.boardLocation.top+'%', left: player.boardLocation.left +'%'}">
+    <table id="player{{player.id}}" ng-class="{'currentPlayer': player.currentPlayer}" class="gameToken" ng-style="{'background-color': player.bgColor(), 'border-color': player.borderColor()}">
+        <tr>
+            <td class="gamePieceCategory" ng-style="{'border-color': player.borderColor(),'background-color': player.categoryThreeCollected.color}"></td>
+            <td class="gamePieceCategory" ng-style="{'border-color': player.borderColor(), 'background-color': player.categoryOneCollected.color}"></td>
+        </tr>
+        <tr>
+            <td class="gamePieceCategory" ng-style="{'border-color': player.borderColor(), 'background-color': player.categoryTwoCollected.color}"></td>
+            <td class="gamePieceCategory" ng-style="{'border-color': player.borderColor(), 'background-color': player.categoryFourCollected.color}"></td>
+        </tr>
+    </table>
+</div>

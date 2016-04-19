@@ -11,6 +11,6 @@
          * 3rd Party modules
          */
 
-         , 'ngplus', 'ui.bootstrap'
+         , 'ngplus', 'ui.bootstrap', 'angulartics', 'angulartics.google.analytics'
     ]);
 })();
